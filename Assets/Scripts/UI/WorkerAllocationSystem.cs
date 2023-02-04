@@ -9,6 +9,8 @@ public class WorkerAllocationSystem : MonoBehaviour
     private List<Worker> _stickWorkers = new List<Worker>();
 
     private List<Worker> _carrotWorkers = new List<Worker>();
+    
+    private List<Worker> _stoneWorkers = new List<Worker>();
 
     private int _workerCount;
 
@@ -22,6 +24,9 @@ public class WorkerAllocationSystem : MonoBehaviour
     private GatherPoint _stickPoint;
     
     [SerializeField]
+    private GatherPoint _stonePoint;
+    
+    [SerializeField]
     private Worker workerPrefab;
 
     public int GetWorkerCount(Resource resType)
@@ -31,6 +36,9 @@ public class WorkerAllocationSystem : MonoBehaviour
         
         if (resType == Resource.Sticks)
             return _stickWorkers.Count;
+        
+        if (resType == Resource.Stone)
+            return _stoneWorkers.Count;
         
         return 0;
     }
@@ -61,7 +69,12 @@ public class WorkerAllocationSystem : MonoBehaviour
     [Button]
     public void RemoveWorker(Resource resourceType)
     {
-        var oldWorkerList = resourceType == Resource.Carrots ? _carrotWorkers : _stickWorkers;
+        var oldWorkerList = resourceType switch
+        {
+            Resource.Carrots => _carrotWorkers,
+            Resource.Sticks => _stickWorkers,
+            _ => _stoneWorkers
+        };
         if (oldWorkerList.Count == 0)
         {
             return;
@@ -74,9 +87,9 @@ public class WorkerAllocationSystem : MonoBehaviour
         worker.SetUnallocated(_stickPoint.dropOffPoint.position + new Vector3(Random.Range(-2f, 2f), 0, 0));
     }
 
-    private void AllocateWorker(Worker worker, Resource newResourceType)
+    private void AllocateWorker(Worker worker, Resource resourceType)
     {
-        switch (newResourceType)
+        switch (resourceType)
         {
             case Resource.Carrots:
                 worker.Initialize(_carrotPoint.gatherPoint, _carrotPoint.dropOffPoint, _carrotPoint.resourceType);
@@ -84,9 +97,17 @@ public class WorkerAllocationSystem : MonoBehaviour
             case Resource.Sticks:
                 worker.Initialize(_stickPoint.gatherPoint, _stickPoint.dropOffPoint, _stickPoint.resourceType);
                 break;
+            case Resource.Stone:
+                worker.Initialize(_stonePoint.gatherPoint, _stonePoint.dropOffPoint, _stonePoint.resourceType);
+                break;
         }
         
-        var newWorkerList = newResourceType == Resource.Carrots ? _carrotWorkers : _stickWorkers;
+        var newWorkerList = resourceType switch
+        {
+            Resource.Carrots => _carrotWorkers,
+            Resource.Sticks => _stickWorkers,
+            _ => _stoneWorkers
+        };
         newWorkerList.Add(worker);
     }
 
