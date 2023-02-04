@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using EasyButtons;
+using UnityEngine.Events;
 
 public class TreehouseManager : MonoBehaviour
 {
@@ -38,6 +40,11 @@ public class TreehouseManager : MonoBehaviour
 
         //_floorGraphics[_currentHeight-1].gameObject.SetActive(true);
         _rooms[_currentHeight-1].gameObject.SetActive(true);
+        if (_currentHeight == 2)
+        {
+            ProgressionManager.CompleteStep(ProgressStep.GrownTree);
+        }
+
     }
 
     // Start is called before the first frame update

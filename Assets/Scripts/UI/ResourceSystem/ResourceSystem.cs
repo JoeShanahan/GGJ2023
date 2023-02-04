@@ -48,6 +48,11 @@ public class ResourceSystem : MonoBehaviour
         return true;
     }
     
+    public int GetResourceCount(Resource resource)
+    {
+        return _resources[(int)resource];
+    }
+    
     public bool TryDecreaseResources(List<Furniture.FurnitureCost> costs)
     {
         foreach (var cost in costs)
