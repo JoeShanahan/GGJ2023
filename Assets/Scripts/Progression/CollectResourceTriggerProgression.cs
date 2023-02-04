@@ -14,7 +14,7 @@ public class CollectResourceTriggerProgression : MonoBehaviour
         if (ResourceSystem.Instance.GetResourceCount(resource) >= amount)
         {
             ProgressionManager.CompleteStep(step);
+            Destroy(this);
         }
-        Destroy(this);
     }
 }
