@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: ResidentA
   m_EditorClassIdentifier: 
   _residentName: Alice
-  _sprite: {fileID: 0}
+  _sprite: {fileID: 21300000, guid: 3e528b24642a1604fae851be712947bb, type: 3}
+  _quests:
+  - completionConditions:
+    - {fileID: 11400000, guid: 2de9ba4c6d288f149ba78bed4de0210e, type: 2}
+    rewards:
+    - Resource: 2
+      Amount: 2
