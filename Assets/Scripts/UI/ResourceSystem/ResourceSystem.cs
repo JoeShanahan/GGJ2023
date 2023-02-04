@@ -1,5 +1,7 @@
+using System;
 using EasyButtons;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Serialization;
 
 public enum Resource
@@ -12,8 +14,10 @@ public enum Resource
 
 public class ResourceSystem : MonoBehaviour
 {
-    private int[] _resources = new int[(int)Resource.ResourceCount];
+    public static ResourceSystem Instance;
     
+    private int[] _resources = new int[(int)Resource.ResourceCount];
+
     [SerializeField]
     private ResourceCounterUI[] resourceCounters;
     
@@ -35,5 +39,16 @@ public class ResourceSystem : MonoBehaviour
         _resources[(int)resource] -= value;
         resourceCounters[(int)resource].OnChange(-value);
         return true;
+    }
+
+    private void Awake()
+    {
+        Assert.IsNull(Instance);
+        Instance = this;
+    }
+
+    private void OnDestroy()
+    {
+        Instance = null;
     }
 }

@@ -34,6 +34,7 @@ public class ResourceCounterUI : MonoBehaviour
         {
             _currentDisplayed = _count;
             _iconTransform.localScale = Vector3.one;
+            _iconTransform.DOKill();
             _iconTransform.DOPunchScale(Vector3.one * _animationPunchScale, 0.5f, _punchVibrato, 0f);
             counterText.text = _currentDisplayed.ToString();
         }
