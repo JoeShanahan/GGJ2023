@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ConstructionPoint : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class ConstructionPoint : MonoBehaviour
     
     private void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         FurnitureMenu.Instance.OpenMenu(this);
     }
 

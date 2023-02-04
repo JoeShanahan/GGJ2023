@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using EasyButtons;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TreehouseResident : MonoBehaviour
 {
@@ -41,6 +42,10 @@ public class TreehouseResident : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         ResidentInteractionSystem.Instance.BeginInteractWithResident(room);
     }
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Sapling : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class Sapling : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         if (_waterSaplingRoutine != null)
         {
             return;
