@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using EasyButtons;
 using UnityEngine;
@@ -9,6 +10,9 @@ public class TreehouseResident : MonoBehaviour
         public Quest Quest;
         public bool Completed;
     }
+
+    [SerializeField]
+    private TreehouseRoom room;
     
     [SerializeField]
     private ResidentData data;
@@ -21,6 +25,8 @@ public class TreehouseResident : MonoBehaviour
     [SerializeField]
     private GameObject _questCompleteMarker;
 
+    public Queue<string> QueuedConversations = new Queue<string>();
+
     private void Awake()
     {
         _renderer.sprite = data.Sprite;
@@ -28,6 +34,14 @@ public class TreehouseResident : MonoBehaviour
         {
             _activeQuests.Add(new ActiveQuestEntry(){Quest = quest});
         }
+        
+        // QueuedConversations.Enqueue("this is a test conversation");
+        // QueuedConversations.Enqueue("I can say multiple things!");
+    }
+
+    private void OnMouseDown()
+    {
+        ResidentInteractionSystem.Instance.BeginInteractWithResident(room);
     }
 
     public void CheckQuestsComplete(Furniture[] roomFurniture)

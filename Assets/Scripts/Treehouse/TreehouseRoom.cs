@@ -7,6 +7,8 @@ public class TreehouseRoom : MonoBehaviour
     [SerializeField]
     private TreehouseResident _resident;
 
+    public TreehouseResident Resident => _resident;
+
     public void BuildFurniture(Furniture furniture, int index)
     {
         _furnitures[index] = furniture;
