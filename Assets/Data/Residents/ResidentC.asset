@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9aae8c65faa7341856dcfbea9d57b2, type: 3}
   m_Name: ResidentC
   m_EditorClassIdentifier: 
-  _residentName: Carl
+  _residentName: Barry
   _sprite: {fileID: 21300000, guid: 760bb34969d95984c81c7a15bbae8aa6, type: 3}
   _quests: []
