@@ -51,10 +51,16 @@ public class WorkerAllocationSystem : MonoBehaviour
     }
 
     [Button]
-    public void RemoveWorker(Worker worker)
+    public void RemoveWorker(Resource resourceType)
     {
-        var oldWorkerList = worker.ResourceType == Resource.Carrots ? _carrotWorkers : _stickWorkers;
-        oldWorkerList.Remove(worker);
+        var oldWorkerList = resourceType == Resource.Carrots ? _carrotWorkers : _stickWorkers;
+        if (oldWorkerList.Count == 0)
+        {
+            return;
+        }
+        
+        var worker = oldWorkerList[^1];
+        oldWorkerList.RemoveAt(oldWorkerList.Count - 1);
         
         _unallocatedWorkers.Add(worker);
         worker.SetUnallocated(stickDropOfPoint.position + new Vector3(Random.Range(-2f, 2f), 0, 0));
