@@ -29,24 +29,24 @@ public class TreehouseManager : MonoBehaviour
     [Button]
     public void IncreaseTreeHeight()
     {
-        int maxHeight = _floorGraphics.Length;
+        int maxHeight = _rooms.Count;
 
         if (_currentHeight >= maxHeight)
             return;
 
         _currentHeight ++;
 
-        _floorGraphics[_currentHeight-1].gameObject.SetActive(true);
+        //_floorGraphics[_currentHeight-1].gameObject.SetActive(true);
         _rooms[_currentHeight-1].gameObject.SetActive(true);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach (SpriteRenderer graphic in _floorGraphics)
-        {
-            graphic.gameObject.SetActive(false);
-        }
+        // foreach (SpriteRenderer graphic in _floorGraphics)
+        // {
+        //     graphic.gameObject.SetActive(false);
+        // }
 
         foreach (TreehouseRoom room in _rooms)
         {
