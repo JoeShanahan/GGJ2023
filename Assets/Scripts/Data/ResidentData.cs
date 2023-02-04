@@ -11,7 +11,12 @@ public class ResidentData : ScriptableObject
     [SerializeField]
     private Sprite _sprite;
 
+    [SerializeField]
+    private List<Quest> _quests;
+
     public string Name => _residentName;
 
     public Sprite Sprite => _sprite;
+    
+    public IReadOnlyList<Quest> Quests => _quests;
 }

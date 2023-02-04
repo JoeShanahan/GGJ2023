@@ -10,5 +10,6 @@ public class TreehouseRoom : MonoBehaviour
     public void BuildFurniture(Furniture furniture, int index)
     {
         _furnitures[index] = furniture;
+        _resident.CheckQuestsComplete(_furnitures);
     }
 }
