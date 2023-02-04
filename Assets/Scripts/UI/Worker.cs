@@ -60,7 +60,7 @@ public class Worker : MonoBehaviour
         var distance = (transform.position - targetPosition).magnitude;
         var duration = distance / _walkSpeed;
         int numJumps = Mathf.RoundToInt(duration * _jumpsPerSecond);
-        transform.DOJump(_resourceGatherPoint.position + Vector3.back, _jumpPower, numJumps, duration).SetEase(Ease.Linear);
+        transform.DOJump(targetPosition + Vector3.back, _jumpPower, numJumps, duration).SetEase(Ease.Linear);
         yield return new WaitForSeconds(duration);
     }
     
