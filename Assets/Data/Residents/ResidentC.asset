@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: ResidentC
   m_EditorClassIdentifier: 
   _residentName: Carl
-  _sprite: {fileID: 0}
+  _sprite: {fileID: 21300000, guid: 760bb34969d95984c81c7a15bbae8aa6, type: 3}
+  _quests: []

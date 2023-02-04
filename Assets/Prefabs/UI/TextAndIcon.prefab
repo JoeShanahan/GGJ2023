@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 7561124741837212449}
   - component: {fileID: 2781119267678187416}
   - component: {fileID: 8933844408280409885}
+  - component: {fileID: 2589549364498018568}
   m_Layer: 5
   m_Name: TextAndIcon
   m_TagString: Untagged
@@ -252,6 +253,18 @@ MonoBehaviour:
   _fadeTime: 0.3
   _text: {fileID: 3868847702194155149}
   _image: {fileID: 9084805609213612953}
+--- !u!225 &2589549364498018568
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7639786050476435694}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7933290395745589332
 GameObject:
   m_ObjectHideFlags: 0
