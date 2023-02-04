@@ -34,14 +34,14 @@ public class WaterSystem : MonoBehaviour
 
     void OnProgression()
     {
-        if (_shownWaterUITutorial)
-        {
-            return ;
-        }
-
-        _shownWaterUITutorial = true;
         if (ProgressionManager.HasDone(ProgressStep.CollectedTwigs))
         {
+            if (_shownWaterUITutorial)
+            {
+                return;
+            }
+
+            _shownWaterUITutorial = true;
             StartCoroutine(ShowWaterUI());
         }
     }
