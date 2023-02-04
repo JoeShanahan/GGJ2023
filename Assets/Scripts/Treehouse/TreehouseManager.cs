@@ -24,6 +24,8 @@ public class TreehouseManager : MonoBehaviour
     [SerializeField]
     private SpriteRenderer[] _branchesGraphics;
 
+    public int GetCurrentHeight => _currentHeight;
+
     [Button]
     public void IncreaseTreeHeight()
     {
@@ -55,6 +57,6 @@ public class TreehouseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
