@@ -10,6 +10,7 @@ namespace WorldToCanvas
 
         [SerializeField] RectTransform _canvasRect;
         [SerializeField] GameObject _tutorialTextPrefab;
+        [SerializeField] GameObject _textAndIconPrefab;
 
         Canvas _canvas;     
         RectTransform _rect;
@@ -70,6 +71,13 @@ namespace WorldToCanvas
         {
             TutorialText tb = InstantiateAs<TutorialText>(_instance._tutorialTextPrefab);
             tb.Init(worldPos, text, screenOffset);
+            return tb;
+        }
+
+        public static TextIconBurst TextAndIconBurst(Vector3 worldPos, string text, Sprite icon)
+        {
+            TextIconBurst tb = InstantiateAs<TextIconBurst>(_instance._textAndIconPrefab);
+            tb.SetData(worldPos, text, icon);
             return tb;
         }
     }

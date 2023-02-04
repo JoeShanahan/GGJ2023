@@ -21,6 +21,9 @@ public class ResourceSystem : MonoBehaviour
     private int[] _resources = new int[(int)Resource.ResourceCount];
 
     [SerializeField]
+    private Sprite[] _resourceIcons;
+
+    [SerializeField]
     private ResourceCounterUI[] resourceCounters;
     
     [Button]
@@ -28,6 +31,8 @@ public class ResourceSystem : MonoBehaviour
     {
         _resources[(int)resource] += value;
         resourceCounters[(int)resource].OnChange(value);
+
+        WorldToCanvas.W2CManager.TextAndIconBurst(transform.position + Vector3.up, $"+{value}", _resourceIcons[(int) resource]);
     }
 
     [Button]
