@@ -557,7 +557,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 7afa39feb080e18429e8bb12a9a31cb7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9aa4348290784b2468144a97eb15d8d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1318,7 +1318,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 7afa39feb080e18429e8bb12a9a31cb7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9aa4348290784b2468144a97eb15d8d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4243,11 +4243,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _resourceIcons:
-  - {fileID: 21300000, guid: 760c8a5cbab6d5e45aee6b64eda0a67e, type: 3}
-  - {fileID: 21300000, guid: 760c8a5cbab6d5e45aee6b64eda0a67e, type: 3}
-  - {fileID: 21300000, guid: 760c8a5cbab6d5e45aee6b64eda0a67e, type: 3}
-  - {fileID: 21300000, guid: 760c8a5cbab6d5e45aee6b64eda0a67e, type: 3}
-  - {fileID: 21300000, guid: 760c8a5cbab6d5e45aee6b64eda0a67e, type: 3}
+  - {fileID: 21300000, guid: 10dcd4179245c8743a1b94f95cdfbbd3, type: 3}
+  - {fileID: 21300000, guid: 33236ae2689930e4b8f48c3778ad9777, type: 3}
+  - {fileID: 21300000, guid: 13527793884104b46b7446fd7464c3ed, type: 3}
+  - {fileID: 21300000, guid: 13527793884104b46b7446fd7464c3ed, type: 3}
+  - {fileID: 21300000, guid: 13527793884104b46b7446fd7464c3ed, type: 3}
   resourceCounters:
   - {fileID: 2002774664}
   - {fileID: 2002774663}
