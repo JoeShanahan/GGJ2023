@@ -27,6 +27,7 @@ public class Sapling : MonoBehaviour
     private void Start()
     {
         CameraManager.Instance.Set(cameraStartPosition, cameraStartOrthographicSize);
+        FindObjectOfType<TutorialManager>().EnableTutorial(TutorialManager.TutorialID.WaterTheTree);
     }
 
     private void OnMouseDown()
@@ -40,6 +41,8 @@ public class Sapling : MonoBehaviour
 
     IEnumerator WaterSapling()
     {
+        FindObjectOfType<TutorialManager>().DismissTutorial();
+
         yield return new WaitForSeconds(0.5f);
         // TODO animation
         

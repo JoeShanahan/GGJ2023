@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -516,7 +516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1682,6 +1681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1139060075}
   - component: {fileID: 1139060076}
+  - component: {fileID: 1139060077}
   m_Layer: 0
   m_Name: CarrotField
   m_TagString: Untagged
@@ -1758,6 +1758,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1139060077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139060074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730c79f5a99610641b65b58e7f9d8eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceType: 0
+  dropOffPoint: {fileID: 1670774549}
+  _uiPrefab: {fileID: 6623526344741668608, guid: f38c7271f2e38cc40b4aa5763c658ce8,
+    type: 3}
 --- !u!1 &1182132664
 GameObject:
   m_ObjectHideFlags: 0
@@ -2137,8 +2153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treehouseManager: {fileID: 685214211}
   workerAllocationSystem: {fileID: 1929816974}
-  cameraStartPosition: {x: 0, y: 2.18, z: -10}
-  cameraStartOrthographicSize: 3.65
+  cameraStartPosition: {x: 0, y: 2.83, z: -10}
+  cameraStartOrthographicSize: 4
   camerafirstZoomOutPosition: {x: 0, y: 3, z: -10}
   cameraFirstZoomOutOrthographicSize: 5
 --- !u!61 &1452900469
@@ -2305,6 +2321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1563710085}
   - component: {fileID: 1563710086}
+  - component: {fileID: 1563710087}
   m_Layer: 0
   m_Name: Forest
   m_TagString: Untagged
@@ -2381,6 +2398,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1563710087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563710084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730c79f5a99610641b65b58e7f9d8eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceType: 1
+  dropOffPoint: {fileID: 1670774549}
+  _uiPrefab: {fileID: 6623526344741668608, guid: f38c7271f2e38cc40b4aa5763c658ce8,
+    type: 3}
 --- !u!1 &1626027129
 GameObject:
   m_ObjectHideFlags: 0
@@ -2688,15 +2721,10 @@ MonoBehaviour:
   _peepholeMesh: {fileID: 6684963391155108656}
   entries:
   - tutorialID: 1
-    focusTransform: {fileID: 1563710085}
+    focusTransform: {fileID: 1452900467}
     peepholePercent: 90
-    textOffset: {x: -200, y: 200}
-    text: Look at this thing here, amazing!
-  - tutorialID: 2
-    focusTransform: {fileID: 1139060075}
-    peepholePercent: 90
-    textOffset: {x: 230, y: 200}
-    text: Woah, look at this other thing! Incredible!
+    textOffset: {x: 0, y: -240}
+    text: Water the treeeeee
 --- !u!1001 &1856216520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2921,10 +2949,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startWorkerCount: 0
-  stickGatherPoint: {fileID: 628699245}
-  carrotGatherPoint: {fileID: 276296281}
-  stickDropOfPoint: {fileID: 1670774549}
-  carrotDropOfPoint: {fileID: 1670774549}
+  _carrotPoint: {fileID: 1139060077}
+  _stickPoint: {fileID: 1563710087}
   workerPrefab: {fileID: 7608604925522710618, guid: 6d885f7738b8ec34b8373f6d1db0f143,
     type: 3}
 --- !u!1 &1990951729
