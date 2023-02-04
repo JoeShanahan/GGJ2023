@@ -306,3 +306,5 @@ MonoBehaviour:
   _punchVibrato: 3
   _iconTransform: {fileID: 9029479226696158193}
   counterText: {fileID: 1899485648212699718}
+  resourceSprites: {fileID: 11400000, guid: e377c597840cb0443871007184f78876, type: 2}
+  iconImage: {fileID: 5872558386768903328}

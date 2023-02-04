@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine;
 using DG.Tweening;
 using EasyButtons;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class ResourceCounterUI : MonoBehaviour
 {
@@ -22,9 +24,20 @@ public class ResourceCounterUI : MonoBehaviour
     [SerializeField]
     private TMP_Text counterText;
 
+    [SerializeField]
+    private ResourceSprites resourceSprites;
+    
+    [SerializeField]
+    private Image iconImage;
+
     public void Start()
     {
         counterText.text = _count.ToString();
+    }
+
+    public void Initialize(Resource resource)
+    {
+        iconImage.sprite = resourceSprites.GetResourceSprite(resource);
     }
     
     public void OnChange(int value)
