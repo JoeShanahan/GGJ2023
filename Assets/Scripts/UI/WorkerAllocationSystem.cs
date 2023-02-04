@@ -14,18 +14,26 @@ public class WorkerAllocationSystem : MonoBehaviour
 
     [SerializeField]
     private int startWorkerCount;
+
+    [SerializeField]
+    private GatherPoint _carrotPoint;
     
     [SerializeField]
-    private Transform stickGatherPoint;
-    [SerializeField]
-    private Transform carrotGatherPoint;
-    [SerializeField]
-    private Transform stickDropOfPoint;
-    [SerializeField]
-    private Transform carrotDropOfPoint;
+    private GatherPoint _stickPoint;
     
     [SerializeField]
     private Worker workerPrefab;
+
+    public int GetWorkerCount(Resource resType)
+    {
+        if (resType == Resource.Carrots)
+            return _carrotWorkers.Count;
+        
+        if (resType == Resource.Sticks)
+            return _stickWorkers.Count;
+        
+        return 0;
+    }
 
     public void Start()
     {
@@ -63,7 +71,7 @@ public class WorkerAllocationSystem : MonoBehaviour
         oldWorkerList.RemoveAt(oldWorkerList.Count - 1);
         
         _unallocatedWorkers.Add(worker);
-        worker.SetUnallocated(stickDropOfPoint.position + new Vector3(Random.Range(-2f, 2f), 0, 0));
+        worker.SetUnallocated(_stickPoint.dropOffPoint.position + new Vector3(Random.Range(-2f, 2f), 0, 0));
     }
 
     private void AllocateWorker(Worker worker, Resource newResourceType)
@@ -71,10 +79,10 @@ public class WorkerAllocationSystem : MonoBehaviour
         switch (newResourceType)
         {
             case Resource.Carrots:
-                worker.Initialize(carrotGatherPoint, carrotDropOfPoint, Resource.Carrots);
+                worker.Initialize(_carrotPoint.gatherPoint, _carrotPoint.dropOffPoint, _carrotPoint.resourceType);
                 break;
             case Resource.Sticks:
-                worker.Initialize(stickGatherPoint, stickDropOfPoint, Resource.Sticks);
+                worker.Initialize(_stickPoint.gatherPoint, _stickPoint.dropOffPoint, _stickPoint.resourceType);
                 break;
         }
         
@@ -86,7 +94,7 @@ public class WorkerAllocationSystem : MonoBehaviour
     {
         var worker = Instantiate(workerPrefab);
 
-        worker.transform.position = stickDropOfPoint.position + new Vector3(Random.Range(-2f, 2f), 0, 0);
+        worker.transform.position = _stickPoint.dropOffPoint.position + new Vector3(Random.Range(-2f, 2f), 0, 0);
         
         _unallocatedWorkers.Add(worker);
         
