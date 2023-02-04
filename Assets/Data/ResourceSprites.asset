@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2129bf6cc1c5ca541806c9bfa8b064f9, type: 3}
   m_Name: ResourceSprites
   m_EditorClassIdentifier: 
-  carrotSprite: {fileID: 21300000, guid: 10dcd4179245c8743a1b94f95cdfbbd3, type: 3}
-  stickSprite: {fileID: 21300000, guid: 26e756260f8b5814b95a3ff3085eea28, type: 3}
-  heartSprite: {fileID: 21300000, guid: 81ad716b46a29f14c8d71b0eaae9b6a3, type: 3}
+  carrotSprite: {fileID: 21300000, guid: 3caf5bf364363554e828f83a1cacfbde, type: 3}
+  stickSprite: {fileID: 21300000, guid: 9c8e19d60b2b147488c017fd854dc6a9, type: 3}
+  heartSprite: {fileID: 21300000, guid: 5d89c15ff85ae6b44b401a9c4fb430ec, type: 3}
   stoneSprite: {fileID: 21300000, guid: 626b9cddb29049e4cac50cd87b419945, type: 3}
