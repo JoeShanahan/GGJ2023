@@ -24,6 +24,10 @@ public class FurnitureMenu : MonoBehaviour
 
     public void OpenMenu(ConstructionPoint point)
     {
+        if (ResidentInteractionSystem.Instance.IsInActiveInteraction)
+        {
+            return;
+        }
         Assert.AreEqual(_context, default);
         _context = new OpenFurnitureMenuContext()
         {
