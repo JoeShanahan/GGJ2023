@@ -24,15 +24,28 @@ public class Worker : MonoBehaviour
     [SerializeField]
     private float _jumpsPerSecond = 2;
 
+    public Resource ResourceType => _resourceType;
+
     public void Initialize(Transform resourceGatherPoint, Transform resourceDropOfPoint, Resource resourceType)
     {
         SwitchResourceGatherRoutine(resourceGatherPoint, resourceDropOfPoint, resourceType);
+    }
+
+    public void SetUnallocated(Vector3 position)
+    {
+        if (workRoutine != null)
+        {
+            transform.DOKill();
+            StopCoroutine(workRoutine);
+        }
+        workRoutine = StartCoroutine(UnallocatedRoutine(position));
     }
 
     public void SwitchResourceGatherRoutine(Transform resourceGatherPoint, Transform resourceDropOfPoint, Resource resourceType)
     {
         if (workRoutine != null)
         {
+            transform.DOKill();
             StopCoroutine(workRoutine);
         }
         
@@ -41,7 +54,15 @@ public class Worker : MonoBehaviour
         _resourceType = resourceType;
         workRoutine = StartCoroutine(WorkerRoutine());
     }
-    
+
+    public IEnumerator UnallocatedRoutine(Vector3 targetPosition)
+    {
+        var distance = (transform.position - targetPosition).magnitude;
+        var duration = distance / _walkSpeed;
+        int numJumps = Mathf.RoundToInt(duration * _jumpsPerSecond);
+        transform.DOJump(_resourceGatherPoint.position + Vector3.back, _jumpPower, numJumps, duration).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(duration);
+    }
     
     public IEnumerator WorkerRoutine()
     {
