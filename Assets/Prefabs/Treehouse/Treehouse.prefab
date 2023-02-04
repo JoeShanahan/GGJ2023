@@ -467,7 +467,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9030692390946593208}
   - component: {fileID: 9030692390946593211}
-  - component: {fileID: 7566939473012788974}
   m_Layer: 0
   m_Name: Treehouse
   m_TagString: Untagged
@@ -505,6 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentHeight: 0
+  _treeGrowthSpeed: 2
   _rooms:
   - {fileID: 9030692391426769791}
   - {fileID: 832666906222448951}
@@ -518,26 +518,6 @@ MonoBehaviour:
   - {fileID: 7670863748344540138}
   _rootsGraphics: []
   _branchesGraphics: []
---- !u!95 &7566939473012788974
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9030692390946593210}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a9a393bd00e63534980b379af251b368, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &9030692391269618794
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,10 +644,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9030692391269618795}
     m_Modifications:
+    - target: {fileID: 8565086461417805543, guid: 112aa3e5993e1df4ea61ac13d4278676,
+        type: 3}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 9030692391426769791}
     - target: {fileID: 8565086461630918210, guid: 112aa3e5993e1df4ea61ac13d4278676,
         type: 3}
       propertyPath: m_Name
       value: MouseRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565086461630918210, guid: 112aa3e5993e1df4ea61ac13d4278676,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565086461630918237, guid: 112aa3e5993e1df4ea61ac13d4278676,
         type: 3}
@@ -761,10 +751,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Resident2
       objectReference: {fileID: 0}
+    - target: {fileID: 8565086461417805543, guid: 112aa3e5993e1df4ea61ac13d4278676,
+        type: 3}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 1350514298003881948}
     - target: {fileID: 8565086461630918210, guid: 112aa3e5993e1df4ea61ac13d4278676,
         type: 3}
       propertyPath: m_Name
       value: Room3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565086461630918210, guid: 112aa3e5993e1df4ea61ac13d4278676,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565086461630918237, guid: 112aa3e5993e1df4ea61ac13d4278676,
         type: 3}
@@ -868,10 +868,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Resident1
       objectReference: {fileID: 0}
+    - target: {fileID: 8565086461417805543, guid: 112aa3e5993e1df4ea61ac13d4278676,
+        type: 3}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 832666906222448951}
     - target: {fileID: 8565086461630918210, guid: 112aa3e5993e1df4ea61ac13d4278676,
         type: 3}
       propertyPath: m_Name
       value: Room1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565086461630918210, guid: 112aa3e5993e1df4ea61ac13d4278676,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565086461630918237, guid: 112aa3e5993e1df4ea61ac13d4278676,
         type: 3}
@@ -980,10 +990,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Resident2
       objectReference: {fileID: 0}
+    - target: {fileID: 8565086461417805543, guid: 112aa3e5993e1df4ea61ac13d4278676,
+        type: 3}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 832666905831290486}
     - target: {fileID: 8565086461630918210, guid: 112aa3e5993e1df4ea61ac13d4278676,
         type: 3}
       propertyPath: m_Name
       value: Room2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565086461630918210, guid: 112aa3e5993e1df4ea61ac13d4278676,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565086461630918237, guid: 112aa3e5993e1df4ea61ac13d4278676,
         type: 3}
