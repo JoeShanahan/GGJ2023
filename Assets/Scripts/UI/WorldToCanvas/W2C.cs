@@ -10,6 +10,7 @@ public abstract class W2C : MonoBehaviour
     // Position info
     private Transform _toFollow;
     private Vector3 _worldPosition;
+    protected Vector2 _extraOffset;
     
     // Tracking information
     private Camera _camera;
@@ -33,6 +34,9 @@ public abstract class W2C : MonoBehaviour
 
         Vector3 pos = _toFollow  ? _toFollow.position + _worldPosition : _worldPosition;
         _trackRect.anchoredPosition = _camera.WorldToScreenPoint(pos)  / _canvas.scaleFactor;
+
+        if (_extraOffset != null)
+            _trackRect.anchoredPosition += _extraOffset;
     }
 
     /// <summary> 

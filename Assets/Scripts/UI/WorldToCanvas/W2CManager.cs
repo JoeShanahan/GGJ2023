@@ -9,7 +9,7 @@ namespace WorldToCanvas
         static W2CManager _instance;
 
         [SerializeField] RectTransform _canvasRect;
-        [SerializeField] GameObject _damageBurstPrefab;
+        [SerializeField] GameObject _tutorialTextPrefab;
 
         Canvas _canvas;     
         RectTransform _rect;
@@ -66,10 +66,11 @@ namespace WorldToCanvas
             return new Vector2(x * width, y * height);
         }
 
-        public static void DamageBurst(Vector3 worldPos, int damage)
+        public static TutorialText TutorialText(Vector3 worldPos, string text, Vector2 screenOffset)
         {
-            TextBurst tb = InstantiateAs<TextBurst>(_instance._damageBurstPrefab);
-            tb.Init(worldPos, damage.ToString());
+            TutorialText tb = InstantiateAs<TutorialText>(_instance._tutorialTextPrefab);
+            tb.Init(worldPos, text, screenOffset);
+            return tb;
         }
     }
 }
