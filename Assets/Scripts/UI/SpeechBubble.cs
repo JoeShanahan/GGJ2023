@@ -15,16 +15,11 @@ public class SpeechBubble : MonoBehaviour
     /// <param name="lifetime">The lifetime of the speech bubble</param>
     public static void Create(Transform parent, Vector3 localPosition, string text, float lifetime)
     {
-        if (parent.GetComponentInChildren<SpeechBubble>())
-        {
-            Destroy(parent.GetComponentInChildren<GameObject>());
-        }
-
         Transform speechBubbleTransform = Instantiate(GameAssets.i._pfSpeechBubble, parent);
         speechBubbleTransform.localPosition = localPosition;
 
         speechBubbleTransform.GetComponent<SpeechBubble>().SetupSpeechBubble(text);
-
+        
         Destroy(speechBubbleTransform.gameObject, lifetime);
     }
 

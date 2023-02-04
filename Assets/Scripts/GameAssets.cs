@@ -19,5 +19,5 @@ public class GameAssets : MonoBehaviour
         }
     }
 
-    public Transform _pfSpeechBubble;
+    public Transform _pfSpeechBubble;    
 }
