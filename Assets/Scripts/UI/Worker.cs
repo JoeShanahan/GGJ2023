@@ -18,6 +18,12 @@ public class Worker : MonoBehaviour
     [SerializeField]
     private float _walkSpeed;
 
+    [SerializeField]
+    private float _jumpPower = 1;
+
+    [SerializeField]
+    private float _jumpsPerSecond = 2;
+
     public void Initialize(Transform resourceGatherPoint, Transform resourceDropOfPoint, Resource resourceType)
     {
         SwitchResourceGatherRoutine(resourceGatherPoint, resourceDropOfPoint, resourceType);
@@ -47,7 +53,8 @@ public class Worker : MonoBehaviour
             // walk to resource
             var distance = (transform.position - _resourceGatherPoint.position).magnitude;
             var duration = distance / _walkSpeed;
-            transform.DOMove(_resourceGatherPoint.position, duration);
+            int numJumps = Mathf.RoundToInt(duration * _jumpsPerSecond);
+            transform.DOJump(_resourceGatherPoint.position + Vector3.back, _jumpPower, numJumps, duration).SetEase(Ease.Linear);
             yield return new WaitForSeconds(duration);
             
             // gather resource
@@ -56,7 +63,8 @@ public class Worker : MonoBehaviour
             // walk to tree
             distance = (transform.position - _resourceDropOfPoint.position).magnitude;
             duration = distance / _walkSpeed;
-            transform.DOMove(_resourceDropOfPoint.position, duration);
+            numJumps = Mathf.RoundToInt(duration * _jumpsPerSecond);
+            transform.DOJump(_resourceDropOfPoint.position + Vector3.back, _jumpPower, numJumps, duration).SetEase(Ease.Linear);
             yield return new WaitForSeconds(duration);
             
             //drop of and increase resource
