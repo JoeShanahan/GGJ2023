@@ -333,8 +333,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Woah!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 351b0b5281f6e744a962e4575fabc7ce, type: 2}
+  m_sharedMaterial: {fileID: -7574154892220296054, guid: 351b0b5281f6e744a962e4575fabc7ce,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
