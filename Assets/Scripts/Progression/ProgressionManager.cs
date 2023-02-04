@@ -5,6 +5,7 @@ using UnityEngine;
 
 public enum ProgressStep { Unknown, WateredTree, CollectedTwigs, GrownTree, UnlockedWater, UnlockedRoots, UnlockedUpgrades }
 
+[DefaultExecutionOrder(-1000)]
 public class ProgressionManager : MonoBehaviour
 {
     private static ProgressionManager _instance;
@@ -17,7 +18,7 @@ public class ProgressionManager : MonoBehaviour
     [SerializeField] private bool _hasUnlockedRoots;
     [SerializeField] private bool _hasUnlockedUpgrades;
     
-    void Start() => _instance = this;
+    void Awake() => _instance = this;
 
     public static bool HasDone(ProgressStep step)
     {

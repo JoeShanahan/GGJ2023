@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class WaterSystem : MonoBehaviour
 {
@@ -11,84 +12,56 @@ public class WaterSystem : MonoBehaviour
 
     // The rate of the water drips per second
     [SerializeField]
-    private float _waterDripsPerSecond = 1f;
+    private float _fillSpeedPerSecond = 1f;
 
     [SerializeField]
     private WaterLevels _waterLevels;
 
-    // The amount you need to fill the water meter
-    [SerializeField]
-    private float _waterMeterAmount;   
-
     // How much of the meter is filled
     [SerializeField]
-    private float _waterMeterFill;
-
-    public float Second = SECOND;
-
-    public bool MeterIsFilled;
+    private float _currentFillAmount;
 
     [Header("Water UI")]
     [SerializeField]
-    private TextMeshProUGUI _fillCounter;
-
-    [SerializeField]
     private Image _fillCircle;
-
-    //[SerializeField]
-    //private Image _fillBar;
 
     void Start()
     {
-        SetWaterMeterAmount();
+        ProgressionManager.Subscribe(OnProgression);
+    }
+
+    void OnProgression()
+    {
+        if (ProgressionManager.HasDone(ProgressStep.UnlockedWater))
+        {
+            StartCoroutine(ShowWaterUI());
+        }
+    }
+
+    IEnumerator ShowWaterUI()
+    {
+        yield return new WaitForSeconds(1);
+
+        FindObjectOfType<TutorialManager>().EnableTutorial(TutorialManager.TutorialID.WaterMeter);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (MeterIsFilled)
-        {
-            _treehouseManager.IncreaseTreeHeight();
-            SetWaterMeterAmount();
-            ResetWaterFillAmount();
-        }
+        if (ProgressionManager.HasDone(ProgressStep.UnlockedWater) == false)
+            return;
+
+        float currentMaximum = _waterLevels.WaterMeterAmounts[_treehouseManager.GetCurrentHeight];
+
+        if (_currentFillAmount >= currentMaximum)
+            return;
         
-        //Second tick for drip system
-        Second -= Time.deltaTime;        
-
-        if (Second <= 0)
-        {
-            TickComplete();
-        }
-
-        // UI updates
-        _fillCircle.fillAmount = Second;
-        _fillCounter.SetText(_waterDripsPerSecond.ToString());
-        
-    }
-
-    void TickComplete()
-    {
-        FillMeter(_waterDripsPerSecond);        
-
-        Second = SECOND;
+        _currentFillAmount += _fillSpeedPerSecond * Time.deltaTime;
+        _fillCircle.fillAmount = _currentFillAmount / currentMaximum;
     }
 
     void ResetWaterFillAmount()
     {
-        _waterMeterFill = 0;
-    }
-
-    void SetWaterMeterAmount()
-    {
-        _waterMeterAmount = _waterLevels.WaterMeterAmounts[_treehouseManager.GetCurrentHeight];
-    }
-
-    void FillMeter(float fillAmount)
-    {
-        _waterMeterFill += fillAmount;
-
-        //Fills the meter UI to match the fill amount
-        //_fillBar.fillAmount = _waterMeterFill;
+        _currentFillAmount = 0;
     }
 }
