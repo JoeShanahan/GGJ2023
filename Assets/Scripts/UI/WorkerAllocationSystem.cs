@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WorkerAllocationSystem : MonoBehaviour
 {
+    private List<Worker> _unallocatedWorkers = new List<Worker>();
+    
     private List<Worker> _stickWorkers = new List<Worker>();
 
     private List<Worker> _carrotWorkers = new List<Worker>();
@@ -36,7 +38,7 @@ public class WorkerAllocationSystem : MonoBehaviour
     [Button]
     public void ReallocateWorker(Resource newResourceType)
     {
-        var oldWorkerList = newResourceType == Resource.Carrots ? _stickWorkers : _carrotWorkers;
+        var oldWorkerList = _unallocatedWorkers; //newResourceType == Resource.Carrots ? _stickWorkers : _carrotWorkers;
         if (oldWorkerList.Count == 0)
         {
             return;
@@ -64,20 +66,13 @@ public class WorkerAllocationSystem : MonoBehaviour
         newWorkerList.Add(worker);
     }
 
-    private void IncreaseWorkerCount()
+    public void IncreaseWorkerCount()
     {
         var worker = Instantiate(workerPrefab);
 
-        if (_workerCount % 2 == 0)
-        {
-            worker.transform.position = carrotDropOfPoint.position;
-            AllocateWorker(worker, Resource.Carrots);
-        }
-        else
-        {
-            worker.transform.position = stickDropOfPoint.position;
-            AllocateWorker(worker, Resource.Sticks);
-        }
+        worker.transform.position = stickDropOfPoint.position + new Vector3(Random.Range(-2f, 2f), 0, 0);
+        
+        _unallocatedWorkers.Add(worker);
         
         _workerCount++;
     }

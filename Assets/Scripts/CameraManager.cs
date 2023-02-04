@@ -42,6 +42,18 @@ public class CameraManager : MonoBehaviour
         transform.DOMove(position, zoomDuration);
     }
 
+    public void Set(Vector3 position, float orthographicSize)
+    {
+        camera.orthographicSize = orthographicSize;
+        transform.position = position;
+    }
+    
+    public void Zoom(Vector3 position, float orthographicSize)
+    {
+        DOTween.To((() => camera.orthographicSize), value => camera.orthographicSize = value, orthographicSize, zoomDuration);
+        transform.DOMove(position, zoomDuration);
+    }
+
     private void OnDestroy()
     {
         Instance = null;
