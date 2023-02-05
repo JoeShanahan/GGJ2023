@@ -27,6 +27,24 @@ public class WaterSystem : MonoBehaviour
     [SerializeField]
     private Image _fillCircle;
 
+    [SerializeField]
+    private GrowTreeButton _growTreeButton;
+
+    public bool IsFull
+    {
+        get
+        {
+            if (_treehouseManager.GetCurrentHeight >= _waterLevels.WaterMeterAmounts.Length )
+            {
+                return false;
+            }
+
+            float currentMaximum = _waterLevels.WaterMeterAmounts[_treehouseManager.GetCurrentHeight];
+
+            return _currentFillAmount >= currentMaximum;
+        }
+    }
+
     void Start()
     {
         ProgressionManager.Subscribe(OnProgression);
@@ -71,10 +89,18 @@ public class WaterSystem : MonoBehaviour
         {
             return;
         }
+
         float currentMaximum = _waterLevels.WaterMeterAmounts[_treehouseManager.GetCurrentHeight];
 
         if (_currentFillAmount >= currentMaximum)
+        {
+            if (_growTreeButton == null)
+                _growTreeButton = FindObjectOfType<GrowTreeButton>();
+                
+            _growTreeButton.ShowButton();
+            _fillCircle.fillAmount = 1;
             return;
+        }
         
         _currentFillAmount += _fillSpeedPerSecond * Time.deltaTime;
         _fillCircle.fillAmount = _currentFillAmount / currentMaximum;

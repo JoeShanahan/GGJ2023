@@ -2343,6 +2343,8 @@ MonoBehaviour:
   _treeTop: {fileID: 3240902661589936367}
   _treeMaterial: {fileID: 2100000, guid: 487c2b1bb5abe5c4698e1fa68008c18d, type: 2}
   _resourceCanvas: {fileID: 7926618621108148517}
+  _growTreeButtonPrefab: {fileID: 2794263476265344941, guid: 989a12f1033b7ab45a3bbedb132cc279,
+    type: 3}
 --- !u!1 &9030692391269618794
 GameObject:
   m_ObjectHideFlags: 0

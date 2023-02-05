@@ -32,6 +32,9 @@ public class TreehouseManager : MonoBehaviour
     [SerializeField]
     private CanvasGroup _resourceCanvas;
 
+    [SerializeField]
+    private GameObject _growTreeButtonPrefab;
+
     [Button]
     public void IncreaseTreeHeight()
     {
@@ -122,6 +125,9 @@ public class TreehouseManager : MonoBehaviour
         {
             room.gameObject.SetActive(false);
         }
+
+        W2C newUI = W2C.Instantiate(_growTreeButtonPrefab);
+        newUI.SetPosition(_treeTop.transform);
     }
 
     // Update is called once per frame
