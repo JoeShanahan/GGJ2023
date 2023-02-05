@@ -2067,6 +2067,11 @@ PrefabInstance:
       propertyPath: rootUpgradeCosts.Array.data[0]
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1070016892428668168, guid: 5797f933a30d30e4e97a84173c318935,
+        type: 3}
+      propertyPath: rootUpgradeCosts.Array.data[1]
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1350514298003881922, guid: 5797f933a30d30e4e97a84173c318935,
         type: 3}
       propertyPath: m_IsActive
@@ -7739,7 +7744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af8637899f012142868a0a312ab7d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workerIncreaseCosts: 000000000000000000000000010000000300000008000000
+  workerIncreaseCosts: 00000000000000000000000001000000030000000f000000
   startWorkerCount: 0
   _carrotPoint: {fileID: 1139060077}
   _stickPoint: {fileID: 1563710087}
