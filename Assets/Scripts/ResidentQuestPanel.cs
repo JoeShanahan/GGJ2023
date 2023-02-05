@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class ResidentQuestPanel : MonoBehaviour
 {
+    private TreehouseResident _resident;
+    
     [SerializeField]
     private float _activeX;
 
@@ -53,9 +55,16 @@ public class ResidentQuestPanel : MonoBehaviour
     }
     
     
+    public void OpenBuildMenu()
+    {
+        FurnitureMenu.Instance.OpenMenu(_resident.Room);
+    }
+    
+    
     [Button]
     public void SetResident(TreehouseResident resident)
     {
+        _resident = resident;
         var data = resident.Data;
         _nameText.text = data.Name;
         bool hasRevealedOne = false;

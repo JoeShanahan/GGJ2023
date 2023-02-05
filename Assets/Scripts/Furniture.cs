@@ -13,6 +13,5 @@ public class Furniture : ScriptableObject
     }
     
     public Sprite IconSprite;
-    public GameObject FurnitureObject;
     public List<FurnitureCost> Cost;
 }
