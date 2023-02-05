@@ -3823,6 +3823,7 @@ MonoBehaviour:
   _hasGrownTree3: 0
   _hasUnlockedRoots: 0
   _hasUnlockedUpgrades: 0
+  _hasDismissedTitle: 0
 --- !u!4 &1019000843
 Transform:
   m_ObjectHideFlags: 0
@@ -4486,6 +4487,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174074128}
   m_CullTransparentMesh: 1
+--- !u!4 &1174967122 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8094067589151094858, guid: 5797f933a30d30e4e97a84173c318935,
+    type: 3}
+  m_PrefabInstance: {fileID: 423241248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1182852251
 GameObject:
   m_ObjectHideFlags: 0
@@ -7126,6 +7133,14 @@ MonoBehaviour:
     text: 'perhaps you can build them
 
       something to make them happier'
+  - tutorialID: 6
+    focusTransform: {fileID: 1174967122}
+    peepholePercent: 93
+    textOffset: {x: 0, y: 300}
+    text: 'these roots aren''t collecting much water
+
+      you''ll need to spread
+      them to grow the tree further'
 --- !u!1 &1864057367
 GameObject:
   m_ObjectHideFlags: 0
@@ -7434,6 +7449,7 @@ MonoBehaviour:
   workerPrefab: {fileID: 7608604925522710618, guid: 6d885f7738b8ec34b8373f6d1db0f143,
     type: 3}
   _increaseWorkersButton: {fileID: 1530204769}
+  _increaseWorkerCostText: {fileID: 0}
 --- !u!1 &1954665000
 GameObject:
   m_ObjectHideFlags: 0
