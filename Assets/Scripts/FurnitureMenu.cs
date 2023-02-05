@@ -59,6 +59,7 @@ public class FurnitureMenu : MonoBehaviour
         {
             _visuals.SetActive(false);
             _context.Room.BuildFurniture(index);
+            ResidentInteractionSystem.Instance.EndInteractWithResident();
             _context = default;
         }
     }
