@@ -8,7 +8,7 @@ using DG.Tweening;
 
 public class TreehouseManager : MonoBehaviour
 {
-    private const float TREE_HEIGHT_DIFF = 5F;
+    private const float TREE_HEIGHT_DIFF = 6.5f;
 
     [SerializeField]
     private int _currentHeight;
@@ -19,20 +19,13 @@ public class TreehouseManager : MonoBehaviour
     [SerializeField]
     private List<TreehouseRoom> _rooms;
 
-    [Header("Background Graphics")]
     [SerializeField]
-    private SpriteRenderer _stumpGraphic;
-
-    [SerializeField]
-    private SpriteRenderer[] _floorGraphics;
-
-    [SerializeField]
-    private SpriteRenderer[] _rootsGraphics;
-
-    [SerializeField]
-    private SpriteRenderer[] _branchesGraphics;
+    private SpriteRenderer _treeTop;
 
     public int GetCurrentHeight => _currentHeight;
+
+    [SerializeField]
+    private Material _treeMaterial;
 
     [Button]
     public void IncreaseTreeHeight()
@@ -44,23 +37,51 @@ public class TreehouseManager : MonoBehaviour
 
         _currentHeight ++;
 
-        TweenFloor(_rooms[_currentHeight - 1].gameObject);
+        StartCoroutine(TweenFloor(_currentHeight - 1));
 
         if (_currentHeight == 2)
         {
             ProgressionManager.CompleteStep(ProgressStep.GrownTree);
         }
-
     }
 
-    void TweenFloor(GameObject floorGO)
+    IEnumerator TweenFloor(int floorIdx)
     {
-        floorGO.SetActive(true);
-        Vector3 to = floorGO.transform.localPosition;
+        DOTween.To(
+            ()=> _treeMaterial.GetFloat("_ReplaceSlider"), 
+            x=> _treeMaterial.SetFloat("_ReplaceSlider", x), 
+            1, 0.5f);
 
-        floorGO.transform.localPosition = new Vector3(to.x, to.y - TREE_HEIGHT_DIFF, to.z);
+        yield return new WaitForSeconds(0.5f);
 
-        floorGO.transform.DOLocalMoveY(to.y, _treeGrowthSpeed);
+        TreehouseRoom currentRoom = _rooms[floorIdx];
+        currentRoom.gameObject.SetActive(true);
+        Vector3 endPos = currentRoom.transform.localPosition;
+
+        if(floorIdx == 0)
+        {
+            _treeTop.transform.localScale = new Vector3(0.5f, 0, 1);
+            _treeTop.transform.DOScale(new Vector3(1, 1, 1), _treeGrowthSpeed);
+            _treeTop.transform.DOLocalMoveY(currentRoom.transform.localPosition.y + TREE_HEIGHT_DIFF -1.5f, _treeGrowthSpeed);
+
+            currentRoom.transform.localPosition = new Vector3(endPos.x, endPos.y - TREE_HEIGHT_DIFF, endPos.z+2);
+            currentRoom.transform.DOLocalMove(endPos, _treeGrowthSpeed);
+        }
+        else
+        {
+            TreehouseRoom previousRoom = _rooms[floorIdx - 1];
+            currentRoom.transform.position = previousRoom.transform.position;
+            currentRoom.transform.DOLocalMoveY(endPos.y, _treeGrowthSpeed);
+            _treeTop.transform.DOLocalMoveY(endPos.y + TREE_HEIGHT_DIFF -1.5f, _treeGrowthSpeed);
+        }
+
+        yield return new WaitForSeconds(_treeGrowthSpeed + 0.2f);
+
+        DOTween.To(
+            ()=> _treeMaterial.GetFloat("_ReplaceSlider"), 
+            x=> _treeMaterial.SetFloat("_ReplaceSlider", x), 
+            0, 0.5f);
+
     }
 
     // Start is called before the first frame update
@@ -70,7 +91,10 @@ public class TreehouseManager : MonoBehaviour
         // {
         //     graphic.gameObject.SetActive(false);
         // }
+        _treeMaterial.SetFloat("_ReplaceSlider", 0);
+        _treeTop.transform.localScale = new Vector3(0, 0, 0);
 
+        
         foreach (TreehouseRoom room in _rooms)
         {
             room.gameObject.SetActive(false);
