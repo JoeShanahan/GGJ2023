@@ -40,4 +40,5 @@ MonoBehaviour:
     rewards:
     - Resource: 2
       Amount: 3
-  _initialConversation: []
+  _initialConversation:
+  - Oh, hello deer!

@@ -47,4 +47,5 @@ MonoBehaviour:
     rewards:
     - Resource: 2
       Amount: 20
-  _initialConversation: []
+  _initialConversation:
+  - Bear-y nice to meet you!
