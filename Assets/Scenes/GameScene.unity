@@ -1732,6 +1732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1936,6 +1937,11 @@ PrefabInstance:
       propertyPath: waterSystem
       value: 
       objectReference: {fileID: 1735975501}
+    - target: {fileID: 1070016892428668168, guid: 5797f933a30d30e4e97a84173c318935,
+        type: 3}
+      propertyPath: rootUpgradeCosts.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1350514298003881922, guid: 5797f933a30d30e4e97a84173c318935,
         type: 3}
       propertyPath: m_IsActive
