@@ -37,7 +37,7 @@ public class TreehouseResident : MonoBehaviour
     private GameObject _questCompleteMarker;
 
     public Queue<string> QueuedConversations = new Queue<string>();
-    
+
     public TreehouseRoom Room { get; set; }
 
     public IReadOnlyList<ActiveQuestEntry> ActiveQuestEntries => _activeQuests;
@@ -64,8 +64,8 @@ public class TreehouseResident : MonoBehaviour
         foreach (var quest in data.Quests)
         {
             _activeQuests.Add(new ActiveQuestEntry() { Quest = quest });
-        }      
-        
+        }
+
         foreach (var message in data.InitialConversation)
         {
             QueuedConversations.Enqueue(message);
@@ -96,13 +96,13 @@ public class TreehouseResident : MonoBehaviour
             var duration = distance / _walkSpeed;
             int numJumps = Mathf.RoundToInt(duration * _jumpsPerSecond);
 
-            if (newRandomPos.x < transform.localPosition.x)
+            if (newRandomPos.x > transform.localPosition.x)
             {
-                transform.Rotate(new Vector3(0, 0, 0));
+                _renderer.flipX = true;
             }
             else
             {
-                transform.Rotate(new Vector3(0, 180, 0));
+                _renderer.flipX = false;
             }
 
             transform.DOLocalJump(newRandomPos + Vector3.back, _jumpPower, numJumps, duration).SetEase(Ease.Linear);
