@@ -59,6 +59,7 @@ public class TreehouseResident : MonoBehaviour
                 quest.Completed = true;
                 _activeQuests[i] = quest;
                 _questCompleteMarker.SetActive(true);
+                quest.Quest.QueueCompletedDialogue(this);
             }
         }
     }
