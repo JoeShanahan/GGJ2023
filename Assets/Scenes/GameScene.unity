@@ -8724,8 +8724,8 @@ MonoBehaviour:
   _resourceIcons:
   - {fileID: 21300000, guid: 10dcd4179245c8743a1b94f95cdfbbd3, type: 3}
   - {fileID: 21300000, guid: 33236ae2689930e4b8f48c3778ad9777, type: 3}
-  - {fileID: 21300000, guid: 13527793884104b46b7446fd7464c3ed, type: 3}
-  - {fileID: 21300000, guid: 13527793884104b46b7446fd7464c3ed, type: 3}
+  - {fileID: 21300000, guid: 81ad716b46a29f14c8d71b0eaae9b6a3, type: 3}
+  - {fileID: 21300000, guid: 1c22ad14e33e03f4e8fa118cc83d6b77, type: 3}
   - {fileID: 21300000, guid: 13527793884104b46b7446fd7464c3ed, type: 3}
   resourceCounters:
   - {fileID: 1335702802}
