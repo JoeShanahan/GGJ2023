@@ -25,7 +25,7 @@ MonoBehaviour:
       Amount: 1
   - _clueText: I'm feeling hungry
     completionDialogue:
-    - Finally, I can eat as much as I want!
+    - Yum! I can eat now.
     completionConditions:
     - {fileID: 11400000, guid: 700264cce0fe05d4bb2f2091c33a9ed5, type: 2}
     rewards:
@@ -33,7 +33,7 @@ MonoBehaviour:
       Amount: 2
   - _clueText: Bonnie feels lonely.
     completionDialogue:
-    - I'm no longer alone. Yay!
+    - Hello fishy!
     completionConditions:
     - {fileID: 11400000, guid: 7ba198053f8aadf43818282ad41f10f3, type: 2}
     rewards:
