@@ -15,7 +15,7 @@ MonoBehaviour:
   _residentName: Barry
   _sprite: {fileID: 21300000, guid: 760bb34969d95984c81c7a15bbae8aa6, type: 3}
   _quests:
-  - _clueText: This wall deserves some paintings.
+  - _clueText: This wall needs some paintings.
     completionDialogue:
     - That's better.
     completionConditions:
@@ -24,8 +24,9 @@ MonoBehaviour:
     rewards:
     - Resource: 2
       Amount: 10
-  - _clueText: I'm hungry
-    completionDialogue: []
+  - _clueText: '*Rumble rumble* my belly...'
+    completionDialogue:
+    - Omnomnom!
     completionConditions:
     - {fileID: 11400000, guid: 007d1a26bc9975e45a1935b082f5dab4, type: 2}
     - {fileID: 11400000, guid: 74fc2524a7a8a274daa5b15bc8aa27fb, type: 2}
@@ -34,7 +35,7 @@ MonoBehaviour:
       Amount: 12
   - _clueText: I want more!
     completionDialogue:
-    - ..
+    - GREAT!
     completionConditions:
     - {fileID: 11400000, guid: 007d1a26bc9975e45a1935b082f5dab4, type: 2}
     - {fileID: 11400000, guid: 9967f658454c2384793daded0be8455d, type: 2}
@@ -46,4 +47,5 @@ MonoBehaviour:
     rewards:
     - Resource: 2
       Amount: 20
-  _initialConversation: []
+  _initialConversation:
+  - Bear-y nice to meet you!

@@ -15,15 +15,16 @@ MonoBehaviour:
   _residentName: Deirdre
   _sprite: {fileID: 21300000, guid: 4d927b36c55d9104da97e095eaf9e6f7, type: 3}
   _quests:
-  - _clueText: I want to read every book in the world!
-    completionDialogue: []
+  - _clueText: Lets read every book!
+    completionDialogue:
+    - The best books!
     completionConditions:
     - {fileID: 11400000, guid: 9967f658454c2384793daded0be8455d, type: 2}
     - {fileID: 11400000, guid: f4cca0df459bba045a86934dad32384f, type: 2}
     rewards:
     - Resource: 2
       Amount: 4
-  - _clueText: I'm exhausted I want to relax
+  - _clueText: I'm exhausted, I want to relax
     completionDialogue:
     - Ahh, perfect!
     completionConditions:
@@ -39,4 +40,5 @@ MonoBehaviour:
     rewards:
     - Resource: 2
       Amount: 3
-  _initialConversation: []
+  _initialConversation:
+  - Oh, hello deer!
