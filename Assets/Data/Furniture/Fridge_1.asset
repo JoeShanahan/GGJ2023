@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cbf5da2a71f3643afec2f22b4e8d8f, type: 3}
   m_Name: Fridge_1
   m_EditorClassIdentifier: 
+  DisplayName: Cute Fridge
   IconSprite: {fileID: 21300000, guid: b1397312b91d9454ab2f4f80092941ab, type: 3}
-  FurnitureObject: {fileID: 8665199529063760530, guid: 49aeb29b75e50fb45a72eb0462bfe0ef,
-    type: 3}
   Cost:
   - Resource: 3
     Amount: 12

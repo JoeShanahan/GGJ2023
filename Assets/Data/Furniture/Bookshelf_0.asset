@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cbf5da2a71f3643afec2f22b4e8d8f, type: 3}
   m_Name: Bookshelf_0
   m_EditorClassIdentifier: 
-  IconSprite: {fileID: 21300000, guid: 78a3caad2ece0f746a261804fd5a4852, type: 3}
-  FurnitureObject: {fileID: 8665199529063760530, guid: 5dd8b1aff6d01694ca5ecdde6029a104,
-    type: 3}
+  DisplayName: Bookshelf
+  IconSprite: {fileID: 21300000, guid: d82f8844b251426448554dfa773f82b0, type: 3}
   Cost:
   - Resource: 3
     Amount: 12
