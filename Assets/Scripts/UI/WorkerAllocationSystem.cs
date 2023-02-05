@@ -15,6 +15,9 @@ public class WorkerAllocationSystem : MonoBehaviour
     private int _workerCount;
 
     [SerializeField]
+    private int[] workerIncreaseCosts;
+
+    [SerializeField]
     private int startWorkerCount;
 
     [SerializeField]
@@ -41,6 +44,19 @@ public class WorkerAllocationSystem : MonoBehaviour
             return _stoneWorkers.Count;
         
         return 0;
+    }
+
+    public int GetWorkerIncreaseCost()
+    {
+        return workerIncreaseCosts[_workerCount];
+    }
+
+    public void TryBuyWorker()
+    {
+        if (ResourceSystem.Instance.TryDecreaseResource(Resource.Hearts, GetWorkerIncreaseCost()))
+        {
+            IncreaseWorkerCount();
+        }
     }
 
     public void Start()

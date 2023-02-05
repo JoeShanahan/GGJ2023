@@ -2040,6 +2040,21 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6404892779077916696, guid: 5797f933a30d30e4e97a84173c318935,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1929816974}
+    - target: {fileID: 6404892779077916696, guid: 5797f933a30d30e4e97a84173c318935,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TryBuyWorker
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404892779077916696, guid: 5797f933a30d30e4e97a84173c318935,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WorkerAllocationSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 9030692390946593208, guid: 5797f933a30d30e4e97a84173c318935,
         type: 3}
       propertyPath: m_RootOrder
@@ -2108,7 +2123,7 @@ PrefabInstance:
     - target: {fileID: 9030692391426769761, guid: 5797f933a30d30e4e97a84173c318935,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9030692391673445316, guid: 5797f933a30d30e4e97a84173c318935,
         type: 3}
@@ -5220,7 +5235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d8a5091685122419bdc8337f85da35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treehouseManager: {fileID: 0}
+  treehouseManager: {fileID: 1035578866}
   workerAllocationSystem: {fileID: 1929816974}
   cameraStartPosition: {x: 0, y: 2.83, z: -10}
   cameraStartOrthographicSize: 4
@@ -7343,6 +7358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af8637899f012142868a0a312ab7d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  workerIncreaseCosts: 0000000000000000000000000100000003000000080000000f0000001900000032000000640000006400000064000000640000006400000064000000640000006400000064000000
   startWorkerCount: 0
   _carrotPoint: {fileID: 1139060077}
   _stickPoint: {fileID: 1563710087}
