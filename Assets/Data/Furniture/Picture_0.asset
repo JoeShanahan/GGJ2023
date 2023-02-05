@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69cbf5da2a71f3643afec2f22b4e8d8f, type: 3}
-  m_Name: Bed
+  m_Name: Picture_0
   m_EditorClassIdentifier: 
-  IconSprite: {fileID: 3625043607559282579, guid: 045b15ec09bba42448d89db77fa6f20a,
-    type: 3}
-  FurnitureObject: {fileID: 8665199529063760530, guid: f1bbd56cfeb4c5a46999a20a64500019,
+  IconSprite: {fileID: 21300000, guid: 7c107fb6b642c484499afe43b7d88adb, type: 3}
+  FurnitureObject: {fileID: 8665199529063760530, guid: 31a00df2e5472564980b72b74b219f6e,
     type: 3}
   Cost:
-  - Resource: 1
+  - Resource: 3
+    Amount: 12
+  - Resource: 0
     Amount: 15

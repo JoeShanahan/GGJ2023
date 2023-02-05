@@ -31,6 +31,9 @@ public class WorkerAllocationSystem : MonoBehaviour
     
     [SerializeField]
     private Worker workerPrefab;
+    
+    [SerializeField]
+    private GameObject _increaseWorkersButton;
 
     public int GetWorkerCount(Resource resType)
     {
@@ -48,6 +51,10 @@ public class WorkerAllocationSystem : MonoBehaviour
 
     public int GetWorkerIncreaseCost()
     {
+        if (_workerCount >= workerIncreaseCosts.Length)
+        {
+            return 0;
+        }
         return workerIncreaseCosts[_workerCount];
     }
 
@@ -136,5 +143,10 @@ public class WorkerAllocationSystem : MonoBehaviour
         _unallocatedWorkers.Add(worker);
         
         _workerCount++;
+
+        if (_workerCount >= workerIncreaseCosts.Length)
+        {
+            _increaseWorkersButton.SetActive(false);
+        }
     }
 }
