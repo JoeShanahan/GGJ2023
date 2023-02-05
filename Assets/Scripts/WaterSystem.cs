@@ -7,11 +7,11 @@ using DG.Tweening;
 public class WaterSystem : MonoBehaviour
 {
     private bool _shownWaterUITutorial;
-    
+
     private const float SECOND = 1.0f;
-    
+
     private float _fillSpeedPerSecond = 1f;
-    
+
     [SerializeField]
     private TreehouseManager _treehouseManager;
 
@@ -27,6 +27,9 @@ public class WaterSystem : MonoBehaviour
     private Image _fillCircle;
 
     [SerializeField]
+    private GrowTreeButton _growTreeButton;
+
+    [SerializeField]
     private RectTransform waterSystemUIRoot;
 
     public float FillSpeedPerSecond
@@ -34,6 +37,21 @@ public class WaterSystem : MonoBehaviour
         set => _fillSpeedPerSecond = value;
     }
 
+
+    public bool IsFull
+    {
+        get
+        {
+            if (_treehouseManager.GetCurrentHeight >= _waterLevels.WaterMeterAmounts.Length)
+            {
+                return false;
+            }
+
+            float currentMaximum = _waterLevels.WaterMeterAmounts[_treehouseManager.GetCurrentHeight];
+
+            return _currentFillAmount >= currentMaximum;
+        }
+    }
 
     void Start()
     {
@@ -63,12 +81,10 @@ public class WaterSystem : MonoBehaviour
 
         var m = FindObjectOfType<TutorialManager>();
         m.EnableTutorial(TutorialManager.TutorialID.WaterMeter);
-        
+
         yield return new WaitForSeconds(4);
-        
+
         m.DismissTutorial();
-        
-        
     }
 
     // Update is called once per frame
@@ -77,15 +93,23 @@ public class WaterSystem : MonoBehaviour
         if (ProgressionManager.HasDone(ProgressStep.CollectedTwigs) == false)
             return;
 
-        if (_treehouseManager.GetCurrentHeight >= _waterLevels.WaterMeterAmounts.Length )
+        if (_treehouseManager.GetCurrentHeight >= _waterLevels.WaterMeterAmounts.Length)
         {
             return;
         }
+
         float currentMaximum = _waterLevels.WaterMeterAmounts[_treehouseManager.GetCurrentHeight];
 
         if (_currentFillAmount >= currentMaximum)
+        {
+            if (_growTreeButton == null)
+                _growTreeButton = FindObjectOfType<GrowTreeButton>();
+
+            _growTreeButton.ShowButton();
+            _fillCircle.fillAmount = 1;
             return;
-        
+        }
+
         _currentFillAmount += _fillSpeedPerSecond * Time.deltaTime;
         _fillCircle.fillAmount = _currentFillAmount / currentMaximum;
     }

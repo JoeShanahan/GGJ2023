@@ -2538,6 +2538,8 @@ MonoBehaviour:
   - 25
   - 100
   waterSystem: {fileID: 0}
+  _growTreeButtonPrefab: {fileID: 2794263476265344941, guid: 989a12f1033b7ab45a3bbedb132cc279,
+    type: 3}
 --- !u!1 &9030692391269618794
 GameObject:
   m_ObjectHideFlags: 0
