@@ -27,6 +27,11 @@ public class TreehouseManager : MonoBehaviour
     [SerializeField]
     private Material _treeMaterial;
 
+    private float _resourceUIAlpha = 0;
+
+    [SerializeField]
+    private CanvasGroup _resourceCanvas;
+
     [Button]
     public void IncreaseTreeHeight()
     {
@@ -60,6 +65,11 @@ public class TreehouseManager : MonoBehaviour
             x=> _treeMaterial.SetFloat("_ReplaceSlider", x), 
             1, 0.5f);
 
+        DOTween.To(
+            () => _resourceUIAlpha, 
+            x => _resourceUIAlpha = x, 
+            0, 0.5f);
+
         yield return new WaitForSeconds(0.5f);
 
         TreehouseRoom currentRoom = _rooms[floorIdx];
@@ -90,6 +100,11 @@ public class TreehouseManager : MonoBehaviour
             x=> _treeMaterial.SetFloat("_ReplaceSlider", x), 
             0, 0.5f);
 
+        DOTween.To(
+            () => _resourceUIAlpha, 
+            x => _resourceUIAlpha = x, 
+            1, 0.5f);
+
     }
 
     // Start is called before the first frame update
@@ -112,6 +127,6 @@ public class TreehouseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        _resourceCanvas.alpha = _resourceUIAlpha;
     }
 }
