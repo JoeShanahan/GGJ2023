@@ -1756,6 +1756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -3975,6 +3976,7 @@ MonoBehaviour:
   _hasGrownTree3: 0
   _hasUnlockedRoots: 0
   _hasUnlockedUpgrades: 0
+  _hasDismissedTitle: 0
 --- !u!4 &1019000843
 Transform:
   m_ObjectHideFlags: 0
@@ -7647,6 +7649,7 @@ MonoBehaviour:
     type: 3}
   _increaseWorkersButton: {fileID: 1530204769}
   _increaseWorkerCostText: {fileID: 1427997191}
+  workerSpawnJumpPower: 0.5
 --- !u!1 &1954665000
 GameObject:
   m_ObjectHideFlags: 0
