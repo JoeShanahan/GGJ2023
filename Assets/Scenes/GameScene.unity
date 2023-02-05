@@ -8781,7 +8781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: 1
-  amount: 5
+  amount: 3
   step: 2
 --- !u!1 &2101478852
 GameObject:

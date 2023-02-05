@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gatheringDuration: 3
-  _walkSpeed: 2.5
+  _walkSpeed: 3
   _jumpPower: 0.3
   _jumpsPerSecond: 4
   _spriteRenderer: {fileID: 3919908462753102374}

@@ -93,7 +93,7 @@ public class TutorialManager : MonoBehaviour
             StartCoroutine(ShowResourceTut());
         }
 
-        if (ProgressionManager.HasDone(ProgressStep.GrownTree2) && _shownTutorials.Contains(TutorialID.ClickResident) == false)
+        if (ProgressionManager.HasDone(ProgressStep.GrownTree) && _shownTutorials.Contains(TutorialID.ClickResident) == false)
         {
             _shownTutorials.Add(TutorialID.ClickResident);
             StartCoroutine(ShowResidentTut());
@@ -117,7 +117,7 @@ public class TutorialManager : MonoBehaviour
     IEnumerator ShowResidentTut()
     {
         yield return new WaitForSeconds(6);
-        EnableTutorial(TutorialID.ClickResourceToCollect);
+        EnableTutorial(TutorialID.ClickResident);
         yield return new WaitForSeconds(5);
         DismissTutorial();
     }
