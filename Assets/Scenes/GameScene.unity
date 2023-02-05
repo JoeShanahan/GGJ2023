@@ -4319,6 +4319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730c79f5a99610641b65b58e7f9d8eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Step: 3
   resourceType: 0
   dropOffPoint: {fileID: 1670774549}
   _uiPrefab: {fileID: 6623526344741668608, guid: f38c7271f2e38cc40b4aa5763c658ce8,
@@ -4606,6 +4607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730c79f5a99610641b65b58e7f9d8eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Step: 3
   resourceType: 3
   dropOffPoint: {fileID: 1670774549}
   _uiPrefab: {fileID: 6623526344741668608, guid: f38c7271f2e38cc40b4aa5763c658ce8,
@@ -5706,6 +5708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730c79f5a99610641b65b58e7f9d8eff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Step: 1
   resourceType: 1
   dropOffPoint: {fileID: 1670774549}
   _uiPrefab: {fileID: 6623526344741668608, guid: f38c7271f2e38cc40b4aa5763c658ce8,
