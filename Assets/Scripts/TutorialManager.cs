@@ -71,7 +71,8 @@ public class TutorialManager : MonoBehaviour
     [Button]
     public void DismissTutorial()
     {
-        DOTween.To(()=> _peepholeMesh.GetBlendShapeWeight(0), x=> _peepholeMesh.SetBlendShapeWeight(0, x), 0, _zoomTime).SetEase(_easeOut);
+        DOTween.To(()=> _peepholeMesh.GetBlendShapeWeight(0), x=> _peepholeMesh.SetBlendShapeWeight(0, x), 0, _zoomTime).SetEase(_easeOut)
+            .OnComplete(() => _peepholeMesh.transform.position = new Vector3(-999, -999, _peepholeMesh.transform.position.z));
 
         _tutorialText?.Dismiss();
         _tutorialText = null;        
@@ -91,6 +92,18 @@ public class TutorialManager : MonoBehaviour
             _shownTutorials.Add(TutorialID.ClickResourceToCollect);
             StartCoroutine(ShowResourceTut());
         }
+
+        if (ProgressionManager.HasDone(ProgressStep.GrownTree2) && _shownTutorials.Contains(TutorialID.ClickResident) == false)
+        {
+            _shownTutorials.Add(TutorialID.ClickResident);
+            StartCoroutine(ShowResidentTut());
+        }
+
+        if (ProgressionManager.HasDone(ProgressStep.UnlockedRoots) && _shownTutorials.Contains(TutorialID.SpreadRoots) == false)
+        {
+            _shownTutorials.Add(TutorialID.SpreadRoots);
+            StartCoroutine(ShowRootsTutorial());
+        }
     }
 
     IEnumerator ShowResourceTut()
@@ -99,7 +112,22 @@ public class TutorialManager : MonoBehaviour
         EnableTutorial(TutorialID.ClickResourceToCollect);
         yield return new WaitForSeconds(5);
         DismissTutorial();
+    }
 
+    IEnumerator ShowResidentTut()
+    {
+        yield return new WaitForSeconds(6);
+        EnableTutorial(TutorialID.ClickResourceToCollect);
+        yield return new WaitForSeconds(5);
+        DismissTutorial();
+    }
+
+    IEnumerator ShowRootsTutorial()
+    {
+        yield return new WaitForSeconds(6);
+        EnableTutorial(TutorialID.SpreadRoots);
+        yield return new WaitForSeconds(5);
+        DismissTutorial();
     }
 
     // Update is called once per frame
