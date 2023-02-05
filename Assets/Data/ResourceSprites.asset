@@ -15,4 +15,4 @@ MonoBehaviour:
   carrotSprite: {fileID: 21300000, guid: 3caf5bf364363554e828f83a1cacfbde, type: 3}
   stickSprite: {fileID: 21300000, guid: 9c8e19d60b2b147488c017fd854dc6a9, type: 3}
   heartSprite: {fileID: 21300000, guid: 5d89c15ff85ae6b44b401a9c4fb430ec, type: 3}
-  stoneSprite: {fileID: 21300000, guid: 626b9cddb29049e4cac50cd87b419945, type: 3}
+  stoneSprite: {fileID: 21300000, guid: 1c22ad14e33e03f4e8fa118cc83d6b77, type: 3}
