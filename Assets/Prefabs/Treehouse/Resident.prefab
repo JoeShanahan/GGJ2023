@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6887578297969945948}
   - component: {fileID: 3781966502600185225}
+  - component: {fileID: 8767269961942853707}
   m_Layer: 0
   m_Name: QuestMarker
   m_TagString: Untagged
@@ -25,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2650575850357764070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.95, y: 1.11, z: 0.41111112}
-  m_LocalScale: {x: 3.2009, y: 3.2009, z: 3.2009}
+  m_LocalPosition: {x: 0.32, y: 4.84, z: 0.41111112}
+  m_LocalScale: {x: 0.8723985, y: 0.8723985, z: 0.8723985}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3375439977275630862}
@@ -73,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f95f697d66d238446b1ab717def09945, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 31bcb7325e78d894db3cd225567954e2, type: 3}
+  m_Color: {r: 0.5856176, g: 0.9569033, b: 0.990566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,6 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8767269961942853707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2650575850357764070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d803b6a0199f3444b0397ece5ec1809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopDuration: 1
+  target: {x: 0.94, y: 1.3, z: 0.94}
 --- !u!1 &3375439977275630863
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,6 +202,11 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 89851ec2dc109654a9007fc7b1dd81df, type: 2}
   _renderer: {fileID: 3375439977275630860}
   _questCompleteMarker: {fileID: 2650575850357764070}
+  _idleMaxDuration: 10
+  _idleMinDuration: 2
+  _walkSpeed: 1
+  _jumpPower: 0.1
+  _jumpsPerSecond: 2
 --- !u!58 &5461042079262501333
 CircleCollider2D:
   m_ObjectHideFlags: 0

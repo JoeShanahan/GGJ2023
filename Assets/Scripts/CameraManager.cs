@@ -8,6 +8,8 @@ using UnityEngine.Assertions;
 public class CameraManager : MonoBehaviour
 {
     public static CameraManager Instance;
+
+    private TreehouseResident _resident;
     
     private Vector3 _cameraZoomOutPosition;
 
@@ -28,6 +30,11 @@ public class CameraManager : MonoBehaviour
     [Button]
     public void ZoomOut()
     {
+        if (_resident != null)
+        {
+            _resident.StartCoroutine(_resident.ResidentRoutine());
+            _resident = null;
+        }
         DOTween.To((() => camera.orthographicSize), value => camera.orthographicSize = value, _cameraZoomOutProjectionSize, zoomDuration);
         transform.DOMove(_cameraZoomOutPosition, zoomDuration);
     }
@@ -45,7 +52,10 @@ public class CameraManager : MonoBehaviour
     [Button]
     public void ZoomIn(TreehouseRoom room)
     {
-        var position = room.transform.position + zoomInOffset;
+        _resident = room.Resident;
+        _resident.StopAllCoroutines();
+        _resident.transform.DOKill();
+        var position = room.Resident.transform.position + zoomInOffset;
         position.z = transform.position.z;
 
         DOTween.To((() => camera.orthographicSize), value => camera.orthographicSize = value, zoomInProjectionSize, zoomDuration);

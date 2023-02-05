@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using EasyButtons;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using DG.Tweening;
+using Random = UnityEngine.Random;
+using System.Collections;
 
 public class TreehouseResident : MonoBehaviour
 {
@@ -10,7 +13,7 @@ public class TreehouseResident : MonoBehaviour
     {
         Active, Completed, RewardObtained
     }
-    
+
     public struct ActiveQuestEntry
     {
         public Quest Quest;
@@ -19,14 +22,14 @@ public class TreehouseResident : MonoBehaviour
 
     [SerializeField]
     private TreehouseRoom room;
-    
+
     [SerializeField]
     private ResidentData data;
 
     public ResidentData Data => data;
 
     private List<ActiveQuestEntry> _activeQuests = new List<ActiveQuestEntry>();
-    
+
     [SerializeField]
     private SpriteRenderer _renderer;
 
@@ -34,21 +37,77 @@ public class TreehouseResident : MonoBehaviour
     private GameObject _questCompleteMarker;
 
     public Queue<string> QueuedConversations = new Queue<string>();
-    
+
     public TreehouseRoom Room { get; set; }
 
     public IReadOnlyList<ActiveQuestEntry> ActiveQuestEntries => _activeQuests;
+
+    [Header("Activity Parameters")]
+    [SerializeField]
+    private float _idleMaxDuration = 10;
+
+    [SerializeField]
+    private float _idleMinDuration = 1;
+
+    [SerializeField]
+    private float _walkSpeed = 2.5f;
+
+    [SerializeField]
+    private float _jumpPower = 1;
+
+    [SerializeField]
+    private float _jumpsPerSecond = 2;
 
     private void Awake()
     {
         _renderer.sprite = data.Sprite;
         foreach (var quest in data.Quests)
         {
-            _activeQuests.Add(new ActiveQuestEntry(){Quest = quest});
+            _activeQuests.Add(new ActiveQuestEntry() { Quest = quest });
         }
-        
-        // QueuedConversations.Enqueue("this is a test conversation");
-        // QueuedConversations.Enqueue("I can say multiple things!");
+
+        foreach (var message in data.InitialConversation)
+        {
+            QueuedConversations.Enqueue(message);
+        }
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(ResidentRoutine());
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
+    //pretty much same code aws worker routine
+    public IEnumerator ResidentRoutine()
+    {
+        while (true)
+        {
+            var idleDuration = Random.Range(_idleMinDuration, _idleMaxDuration);
+            yield return new WaitForSeconds(idleDuration);
+
+            //walk to next spot
+            Vector3 newRandomPos = new Vector3(Random.Range(-2.7f, 2.57f), Random.Range(1.31f, 2.67f), -0.2f);
+            var distance = (transform.localPosition - newRandomPos).magnitude;
+            var duration = distance / _walkSpeed;
+            int numJumps = Mathf.RoundToInt(duration * _jumpsPerSecond);
+
+            if (newRandomPos.x > transform.localPosition.x)
+            {
+                _renderer.flipX = true;
+            }
+            else
+            {
+                _renderer.flipX = false;
+            }
+
+            transform.DOLocalJump(newRandomPos + Vector3.back, _jumpPower, numJumps, duration).SetEase(Ease.Linear);
+            yield return new WaitForSeconds(duration);
+        }
     }
 
     private void OnMouseDown()

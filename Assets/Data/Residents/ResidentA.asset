@@ -16,24 +16,34 @@ MonoBehaviour:
   _sprite: {fileID: 21300000, guid: dd2fdd53389027d4b9691f1f07890ec5, type: 3}
   _quests:
   - _clueText: I'm feeling hungry
+    completionDialogue:
+    - Finally, I can eat as much as I want!
     completionConditions:
     - {fileID: 11400000, guid: 700264cce0fe05d4bb2f2091c33a9ed5, type: 2}
     rewards:
     - Resource: 2
       Amount: 5
   - _clueText: I'd like to sit down
+    completionDialogue: []
     completionConditions:
     - {fileID: 11400000, guid: da556ea69c5b0474fa7accbbfd44686f, type: 2}
     rewards:
     - Resource: 2
       Amount: 5
   - _clueText: I haven't been sleeping well
-  - completionDialogue:
+    completionDialogue: []
+    completionConditions: []
+    rewards: []
+  - _clueText: 
+    completionDialogue:
     - 'Ahh, this bed is just what I needed! '
     - Thank you so much, I can finally get some well-deserved rest.
-
-    completionConditions:
-    - {fileID: 11400000, guid: 2de9ba4c6d288f149ba78bed4de0210e, type: 2}
-    rewards:
-    - Resource: 2
-      Amount: 10
+    - 
+    completionConditions: []
+    rewards: []
+  - _clueText: 
+    completionDialogue: []
+    completionConditions: []
+    rewards: []
+  _initialConversation:
+  - Hi, I'm Bonnie!
