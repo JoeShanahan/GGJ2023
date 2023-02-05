@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8532863835301841781}
   - component: {fileID: 4492086490151148449}
   - component: {fileID: 8760622399378849228}
+  - component: {fileID: 1340301161250514602}
   m_Layer: 0
   m_Name: CarrotFrame
   m_TagString: Untagged
@@ -163,6 +164,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 5
+--- !u!114 &1340301161250514602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448522150214268553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a2ca574e549864fadad735a03b35fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationPunchScale: 0.5
+  _punchVibrato: 3
+  _iconTransform: {fileID: 8862003613203174171}
+  counterText: {fileID: 5279741851997964229}
+  resourceSprites: {fileID: 11400000, guid: e377c597840cb0443871007184f78876, type: 2}
+  iconImage: {fileID: 1987192737545768716}
 --- !u!1 &1741243397885099483
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,9 +377,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -113}
+  m_AnchoredPosition: {x: 0.000011444092, y: -48.85005}
   m_SizeDelta: {x: 121.1, y: 128.30002}
-  m_Pivot: {x: 0.5, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2930453481640714264
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -632,9 +651,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -113}
+  m_AnchoredPosition: {x: -0.00006866455, y: -48.850037}
   m_SizeDelta: {x: 121.1, y: 128.30002}
-  m_Pivot: {x: 0.5, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2955540848894299065
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -904,6 +923,7 @@ GameObject:
   - component: {fileID: 1330994180313832349}
   - component: {fileID: 1116723279882784748}
   - component: {fileID: 6799392472489920520}
+  - component: {fileID: 78398274733302283}
   m_Layer: 0
   m_Name: StickFrame
   m_TagString: Untagged
@@ -972,6 +992,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 5
+--- !u!114 &78398274733302283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265713221980264619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a2ca574e549864fadad735a03b35fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationPunchScale: 0.5
+  _punchVibrato: 3
+  _iconTransform: {fileID: 3168373839337427558}
+  counterText: {fileID: 4397932383829194710}
+  resourceSprites: {fileID: 11400000, guid: e377c597840cb0443871007184f78876, type: 2}
+  iconImage: {fileID: 492956970092476198}
 --- !u!1 &3582361768989914519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,9 +1256,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -113}
+  m_AnchoredPosition: {x: 0.0000667572, y: -48.850067}
   m_SizeDelta: {x: 121.1, y: 128.30002}
-  m_Pivot: {x: 0.5, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4476776295277548724
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1624,6 +1662,7 @@ GameObject:
   - component: {fileID: 1393400892386234301}
   - component: {fileID: 3840266135919081491}
   - component: {fileID: 1966162558831434653}
+  - component: {fileID: 8010540320161525653}
   m_Layer: 0
   m_Name: StoneFrame
   m_TagString: Untagged
@@ -1692,6 +1731,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 5
+--- !u!114 &8010540320161525653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5709386464497589314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a2ca574e549864fadad735a03b35fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationPunchScale: 0.5
+  _punchVibrato: 3
+  _iconTransform: {fileID: 1845768427532300566}
+  counterText: {fileID: 4831114137897251008}
+  resourceSprites: {fileID: 11400000, guid: e377c597840cb0443871007184f78876, type: 2}
+  iconImage: {fileID: 2087839781874300737}
 --- !u!1 &5878089329706937982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2514,6 +2571,7 @@ MonoBehaviour:
   _treeTop: {fileID: 3240902661589936367}
   _treeMaterial: {fileID: 2100000, guid: 487c2b1bb5abe5c4698e1fa68008c18d, type: 2}
   _resourceCanvas: {fileID: 7926618621108148517}
+  _growTreeButtonPrefab: {fileID: 0}
 --- !u!114 &1070016892428668168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2538,8 +2596,6 @@ MonoBehaviour:
   - 25
   - 100
   waterSystem: {fileID: 0}
-  _growTreeButtonPrefab: {fileID: 2794263476265344941, guid: 989a12f1033b7ab45a3bbedb132cc279,
-    type: 3}
 --- !u!1 &9030692391269618794
 GameObject:
   m_ObjectHideFlags: 0
