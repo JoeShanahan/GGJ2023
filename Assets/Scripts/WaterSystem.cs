@@ -11,6 +11,8 @@ public class WaterSystem : MonoBehaviour
     private const float SECOND = 1.0f;
 
     private float _fillSpeedPerSecond = 1f;
+    
+    private GrowTreeButton _growTreeButton;
 
     [SerializeField]
     private TreehouseManager _treehouseManager;
@@ -25,9 +27,6 @@ public class WaterSystem : MonoBehaviour
     [Header("Water UI")]
     [SerializeField]
     private Image _fillCircle;
-
-    [SerializeField]
-    private GrowTreeButton _growTreeButton;
 
     [SerializeField]
     private RectTransform waterSystemUIRoot;

@@ -1814,6 +1814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -2008,6 +2009,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.72
       objectReference: {fileID: 0}
+    - target: {fileID: 1070016892428668168, guid: 5797f933a30d30e4e97a84173c318935,
+        type: 3}
+      propertyPath: waterSystem
+      value: 
+      objectReference: {fileID: 1735975501}
     - target: {fileID: 1350514298003881922, guid: 5797f933a30d30e4e97a84173c318935,
         type: 3}
       propertyPath: m_IsActive
@@ -2133,6 +2139,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9030692390946593211, guid: 5797f933a30d30e4e97a84173c318935,
+        type: 3}
+      propertyPath: _growTreeButtonPrefab
+      value: 
+      objectReference: {fileID: 2794263476265344941, guid: 989a12f1033b7ab45a3bbedb132cc279,
+        type: 3}
     - target: {fileID: 9030692391426769761, guid: 5797f933a30d30e4e97a84173c318935,
         type: 3}
       propertyPath: m_IsActive
@@ -6523,6 +6535,18 @@ Transform:
   m_Father: {fileID: 1929816973}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1735975501 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5158648969984143951, guid: 8dd855a0427e6594b8313f5bd2f9210a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4646975025772095866}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c30643de131734680bed7abab7bc96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1757458181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8096,11 +8120,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterSystem
       objectReference: {fileID: 0}
-    - target: {fileID: 5158648969984143948, guid: 8dd855a0427e6594b8313f5bd2f9210a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5158648969984143950, guid: 8dd855a0427e6594b8313f5bd2f9210a,
         type: 3}
       propertyPath: m_RootOrder
@@ -8161,11 +8180,6 @@ PrefabInstance:
       propertyPath: _fillCircle
       value: 
       objectReference: {fileID: 1757458183}
-    - target: {fileID: 5158648969984143951, guid: 8dd855a0427e6594b8313f5bd2f9210a,
-        type: 3}
-      propertyPath: _fillCounter
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5158648969984143951, guid: 8dd855a0427e6594b8313f5bd2f9210a,
         type: 3}
       propertyPath: _treehouseManager
