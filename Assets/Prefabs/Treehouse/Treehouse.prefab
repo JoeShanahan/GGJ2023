@@ -4886,6 +4886,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8565086461630918236, guid: 112aa3e5993e1df4ea61ac13d4278676,
+        type: 3}
+      propertyPath: _allFurniture.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8565086461630918237, guid: 112aa3e5993e1df4ea61ac13d4278676,
         type: 3}
       propertyPath: m_RootOrder
