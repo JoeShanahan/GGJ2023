@@ -598,8 +598,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visuals: {fileID: 583386946}
   furnitures:
-  - {fileID: 11400000, guid: 2de9ba4c6d288f149ba78bed4de0210e, type: 2}
-  - {fileID: 11400000, guid: da556ea69c5b0474fa7accbbfd44686f, type: 2}
   - {fileID: 11400000, guid: 700264cce0fe05d4bb2f2091c33a9ed5, type: 2}
   entryPrefab: {fileID: 8618855795332716854, guid: 570baabbf45d4884e957d50cd3bfc92b,
     type: 3}
