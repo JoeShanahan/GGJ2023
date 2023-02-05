@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using EasyButtons;
+using TMPro;
 using UnityEngine;
 
 public class WorkerAllocationSystem : MonoBehaviour
@@ -34,6 +35,9 @@ public class WorkerAllocationSystem : MonoBehaviour
     
     [SerializeField]
     private GameObject _increaseWorkersButton;
+
+    [SerializeField]
+    private TMP_Text _increaseWorkerCostText;
 
     public int GetWorkerCount(Resource resType)
     {
@@ -72,6 +76,8 @@ public class WorkerAllocationSystem : MonoBehaviour
         {
             IncreaseWorkerCount();
         }
+
+        _increaseWorkerCostText.text = GetWorkerIncreaseCost().ToString() + "x";
     }
 
     [Button]
@@ -147,6 +153,10 @@ public class WorkerAllocationSystem : MonoBehaviour
         if (_workerCount >= workerIncreaseCosts.Length)
         {
             _increaseWorkersButton.SetActive(false);
+        }
+        else
+        {
+            _increaseWorkerCostText.text = GetWorkerIncreaseCost().ToString() + "x";
         }
     }
 }

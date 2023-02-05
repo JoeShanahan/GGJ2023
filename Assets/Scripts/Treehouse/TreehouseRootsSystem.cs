@@ -1,6 +1,7 @@
 using System.Collections;
 using DG.Tweening;
 using EasyButtons;
+using TMPro;
 using UnityEngine;
 
 public class TreehouseRootsSystem : MonoBehaviour
@@ -25,6 +26,10 @@ public class TreehouseRootsSystem : MonoBehaviour
     [SerializeField]
     private WaterSystem waterSystem;
     
+    [SerializeField]
+    private TMP_Text _increaseRootsCostText;
+
+    
     public void Awake()
     {
         for (int i = 0; i < rootGameObjects.Length; i++)
@@ -40,6 +45,7 @@ public class TreehouseRootsSystem : MonoBehaviour
         }
 
         waterSystem.FillSpeedPerSecond = rootStageWaterFillPerSeconds[0];
+        _increaseRootsCostText.text = rootUpgradeCosts[0].ToString() + "x";
     }
 
     public void TryGrowRoots()
@@ -58,6 +64,11 @@ public class TreehouseRootsSystem : MonoBehaviour
     
     public IEnumerator GrowRoots()
     {
+        if (_rootStage == 0)
+        {
+            _increaseRootsCostText.text = rootUpgradeCosts[1].ToString() + "x";
+        }
+        
         if (_rootStage >= 2)
         {
             yield break;
