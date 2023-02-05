@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
+using DG.Tweening;
 
 public class WaterSystem : MonoBehaviour
 {
@@ -27,8 +28,12 @@ public class WaterSystem : MonoBehaviour
     [SerializeField]
     private Image _fillCircle;
 
+    [SerializeField]
+    private RectTransform waterSystemUIRoot;
+
     void Start()
     {
+        waterSystemUIRoot.transform.position += new Vector3(-128, 0, 0);
         ProgressionManager.Subscribe(OnProgression);
         _fillCircle.fillAmount = 0f;
     }
@@ -49,6 +54,7 @@ public class WaterSystem : MonoBehaviour
 
     IEnumerator ShowWaterUI()
     {
+        waterSystemUIRoot.DOMove(waterSystemUIRoot.transform.position + new Vector3(128, 0, 0), 0.5f);
         yield return new WaitForSeconds(1);
 
         var m = FindObjectOfType<TutorialManager>();
