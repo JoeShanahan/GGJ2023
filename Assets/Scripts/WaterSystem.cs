@@ -67,6 +67,10 @@ public class WaterSystem : MonoBehaviour
         if (ProgressionManager.HasDone(ProgressStep.CollectedTwigs) == false)
             return;
 
+        if (_treehouseManager.GetCurrentHeight >= _waterLevels.WaterMeterAmounts.Length )
+        {
+            return;
+        }
         float currentMaximum = _waterLevels.WaterMeterAmounts[_treehouseManager.GetCurrentHeight];
 
         if (_currentFillAmount >= currentMaximum)
