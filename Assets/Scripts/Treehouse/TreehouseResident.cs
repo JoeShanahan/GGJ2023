@@ -44,13 +44,13 @@ public class TreehouseResident : MonoBehaviour
 
     [Header("Activity Parameters")]
     [SerializeField]
-    private float _idleMaxDuration;
+    private float _idleMaxDuration = 10;
 
     [SerializeField]
-    private float _idleMinDuration;
+    private float _idleMinDuration = 1;
 
     [SerializeField]
-    private float _walkSpeed;
+    private float _walkSpeed = 2.5f;
 
     [SerializeField]
     private float _jumpPower = 1;
@@ -64,15 +64,20 @@ public class TreehouseResident : MonoBehaviour
         foreach (var quest in data.Quests)
         {
             _activeQuests.Add(new ActiveQuestEntry() { Quest = quest });
-        }
+        }        
 
         // QueuedConversations.Enqueue("this is a test conversation");
         // QueuedConversations.Enqueue("I can say multiple things!");
     }
 
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(ResidentRoutine());
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     //pretty much same code aws worker routine
