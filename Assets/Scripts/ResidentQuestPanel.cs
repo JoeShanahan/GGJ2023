@@ -51,18 +51,21 @@ public class ResidentQuestPanel : MonoBehaviour
         var rt = (transform as RectTransform);
         rt.anchoredPosition = new Vector2(_inactiveX, rt.anchoredPosition.y);
     }
-
+    
+    
     [Button]
-    public void SetResident(ResidentData data)
+    public void SetResident(TreehouseResident resident)
     {
+        var data = resident.Data;
         _nameText.text = data.Name;
         bool hasRevealedOne = false;
 
         for (int i=0; i<3; i++)
         {
-            Quest quest = data.Quests[i];
-
-            bool isComplete = quest.IsComplete;
+            var questEntry = resident.ActiveQuestEntries[i];
+            var quest = questEntry.Quest;
+            
+            bool isComplete = questEntry.Stage != TreehouseResident.QuestStage.Active;
             _starBackgrounds[i].color = isComplete ? _completeCircleColour : _nonCompleteCircleColour;
             _stars[i].gameObject.SetActive(isComplete);
 

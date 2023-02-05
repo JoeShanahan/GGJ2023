@@ -6,10 +6,15 @@ using UnityEngine.EventSystems;
 
 public class TreehouseResident : MonoBehaviour
 {
-    private struct ActiveQuestEntry
+    public enum QuestStage
+    {
+        Active, Completed, RewardObtained
+    }
+    
+    public struct ActiveQuestEntry
     {
         public Quest Quest;
-        public bool Completed;
+        public QuestStage Stage;
     }
 
     [SerializeField]
@@ -29,6 +34,8 @@ public class TreehouseResident : MonoBehaviour
     private GameObject _questCompleteMarker;
 
     public Queue<string> QueuedConversations = new Queue<string>();
+
+    public IReadOnlyList<ActiveQuestEntry> ActiveQuestEntries => _activeQuests;
 
     private void Awake()
     {
@@ -56,9 +63,9 @@ public class TreehouseResident : MonoBehaviour
         for (var i = 0; i < _activeQuests.Count; i++)
         {
             var quest = _activeQuests[i];
-            if (quest.Quest.CheckComplete(roomFurniture))
+            if (quest.Stage == QuestStage.Active && quest.Quest.CheckComplete(roomFurniture))
             {
-                quest.Completed = true;
+                quest.Stage = QuestStage.Completed;
                 _activeQuests[i] = quest;
                 _questCompleteMarker.SetActive(true);
                 quest.Quest.QueueCompletedDialogue(this);
@@ -67,15 +74,16 @@ public class TreehouseResident : MonoBehaviour
     }
 
     [Button]
-    public void DEBUG_FinishAllCompletedQuests()
+    public void FinishAllCompletedQuests()
     {
-        for (var i = _activeQuests.Count - 1; i >= 0; i--)
+        for (var i = 0; i < _activeQuests.Count; i++)
         {
             var quest = _activeQuests[i];
-            if (quest.Completed)
+            if (quest.Stage == QuestStage.Completed)
             {
                 quest.Quest.ObtainRewards();
-                _activeQuests.RemoveAt(i);
+                quest.Stage = QuestStage.RewardObtained;
+                _activeQuests[i] = quest;
             }
         }
         _questCompleteMarker.SetActive(false);

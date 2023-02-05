@@ -64,7 +64,8 @@ public class ResidentInteractionSystem : MonoBehaviour
             yield return new WaitForSeconds(duration + 0.5f);
         }
         _interactionCoroutine = null;
-        residentQuestPanel.SetResident(resident.Data);
+        resident.FinishAllCompletedQuests();
+        residentQuestPanel.SetResident(resident);
         residentQuestPanel.MakeVisible(true);
     }
 }

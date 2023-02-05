@@ -182,6 +182,7 @@ MonoBehaviour:
   counterText: {fileID: 5279741851997964229}
   resourceSprites: {fileID: 11400000, guid: e377c597840cb0443871007184f78876, type: 2}
   iconImage: {fileID: 1987192737545768716}
+  _appearOnFirstDeposit: 1
 --- !u!1 &1741243397885099483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,6 +1011,7 @@ MonoBehaviour:
   counterText: {fileID: 4397932383829194710}
   resourceSprites: {fileID: 11400000, guid: e377c597840cb0443871007184f78876, type: 2}
   iconImage: {fileID: 492956970092476198}
+  _appearOnFirstDeposit: 1
 --- !u!1 &3582361768989914519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,6 +1751,7 @@ MonoBehaviour:
   counterText: {fileID: 4831114137897251008}
   resourceSprites: {fileID: 11400000, guid: e377c597840cb0443871007184f78876, type: 2}
   iconImage: {fileID: 2087839781874300737}
+  _appearOnFirstDeposit: 1
 --- !u!1 &5878089329706937982
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,9 +30,14 @@ public class ResourceCounterUI : MonoBehaviour
     [SerializeField]
     private Image iconImage;
 
+    [SerializeField]
+    private bool _appearOnFirstDeposit;
+
     public void Start()
     {
         counterText.text = _count.ToString();
+        if (_appearOnFirstDeposit)
+            transform.localScale = Vector3.zero;
     }
 
     public void Initialize(Resource resource)
@@ -42,6 +47,12 @@ public class ResourceCounterUI : MonoBehaviour
     
     public void OnChange(int value)
     {
+        if (_appearOnFirstDeposit)
+        {
+            _appearOnFirstDeposit = false;
+            transform.DOScale(1, 0.6f).SetEase(Ease.OutBack);
+        }
+
         _count += value;
         if (value > 0)
         {
