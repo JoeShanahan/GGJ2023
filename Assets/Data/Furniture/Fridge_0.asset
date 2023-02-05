@@ -16,6 +16,6 @@ MonoBehaviour:
   IconSprite: {fileID: 21300000, guid: 1966063e22dc77c4db0bd970bba6d212, type: 3}
   Cost:
   - Resource: 3
-    Amount: 12
+    Amount: 3
   - Resource: 0
-    Amount: 15
+    Amount: 8

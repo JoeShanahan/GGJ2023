@@ -15,7 +15,7 @@ MonoBehaviour:
   DisplayName: Vibrant Painting
   IconSprite: {fileID: 21300000, guid: 7c107fb6b642c484499afe43b7d88adb, type: 3}
   Cost:
-  - Resource: 3
-    Amount: 12
+  - Resource: 1
+    Amount: 4
   - Resource: 0
-    Amount: 15
+    Amount: 2

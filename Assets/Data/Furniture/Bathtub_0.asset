@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cbf5da2a71f3643afec2f22b4e8d8f, type: 3}
   m_Name: Bathtub_0
   m_EditorClassIdentifier: 
+  DisplayName: Bathtub
   IconSprite: {fileID: 21300000, guid: 2eedb176c78a2fc4d957acc1692ecd40, type: 3}
   Cost:
   - Resource: 3
-    Amount: 12
-  - Resource: 0
-    Amount: 15
+    Amount: 6
+  - Resource: 1
+    Amount: 4
