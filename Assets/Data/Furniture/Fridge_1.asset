@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69cbf5da2a71f3643afec2f22b4e8d8f, type: 3}
-  m_Name: Chair
+  m_Name: Fridge_1
   m_EditorClassIdentifier: 
-  IconSprite: {fileID: 21300000, guid: 9e9474494461bd048803b48e391ef0f6, type: 3}
-  FurnitureObject: {fileID: 0}
+  IconSprite: {fileID: 21300000, guid: b1397312b91d9454ab2f4f80092941ab, type: 3}
+  FurnitureObject: {fileID: 8665199529063760530, guid: 49aeb29b75e50fb45a72eb0462bfe0ef,
+    type: 3}
   Cost:
-  - Resource: 1
-    Amount: 10
+  - Resource: 3
+    Amount: 12
+  - Resource: 0
+    Amount: 15
