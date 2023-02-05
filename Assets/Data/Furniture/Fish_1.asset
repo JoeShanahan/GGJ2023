@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cbf5da2a71f3643afec2f22b4e8d8f, type: 3}
   m_Name: Fish_1
   m_EditorClassIdentifier: 
+  DisplayName: Purple Fish
   IconSprite: {fileID: 21300000, guid: f3abb4051404a5240b8e9004a4fe2db7, type: 3}
   Cost:
   - Resource: 3
