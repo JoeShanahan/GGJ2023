@@ -73,6 +73,15 @@ public class Worker : MonoBehaviour
         int numJumps = Mathf.RoundToInt(duration * _jumpsPerSecond);
         transform.DOJump(targetPosition + Vector3.back, _jumpPower, numJumps, duration).SetEase(Ease.Linear);
         yield return new WaitForSeconds(duration);
+
+        while (true)
+        {
+            var loopDuration = 1f;
+            transform.DOScale(Vector3.one + new Vector3(0f, 0.05f, 0f), loopDuration);
+            yield return new WaitForSeconds(loopDuration);
+            transform.DOScale(Vector3.one, loopDuration);
+            yield return new WaitForSeconds(loopDuration);
+        }
     }
     
     public IEnumerator WorkerRoutine()

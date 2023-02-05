@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using EasyButtons;
 using TMPro;
 using UnityEngine;
@@ -38,6 +39,9 @@ public class WorkerAllocationSystem : MonoBehaviour
 
     [SerializeField]
     private TMP_Text _increaseWorkerCostText;
+
+    [SerializeField]
+    private float workerSpawnJumpPower;
 
     public int GetWorkerCount(Resource resType)
     {
@@ -143,10 +147,13 @@ public class WorkerAllocationSystem : MonoBehaviour
     public void IncreaseWorkerCount()
     {
         var worker = Instantiate(workerPrefab);
-
         worker.transform.position = _stickPoint.dropOffPoint.position + new Vector3(Random.Range(-2f, 2f), 0, 0);
+        worker.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+        worker.transform.DOJump(worker.transform.position, workerSpawnJumpPower, 1, 1f);
+        worker.transform.DOScale(Vector3.one, 1f);
         
         _unallocatedWorkers.Add(worker);
+        worker.SetUnallocated(worker.transform.position);
         
         _workerCount++;
 
