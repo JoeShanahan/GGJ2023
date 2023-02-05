@@ -14,4 +14,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _residentName: Barry
   _sprite: {fileID: 21300000, guid: 760bb34969d95984c81c7a15bbae8aa6, type: 3}
-  _quests: []
+  _quests:
+  - _clueText: This wall deserves some paintings.
+    completionDialogue:
+    - That's better.
+    completionConditions:
+    - {fileID: 11400000, guid: e010202515beb894389f9da3aa238459, type: 2}
+    - {fileID: 11400000, guid: ca4806214d72e3341ae7ad716105a4c5, type: 2}
+    rewards:
+    - Resource: 2
+      Amount: 10
+  - _clueText: I'm hungry
+    completionDialogue: []
+    completionConditions:
+    - {fileID: 11400000, guid: 007d1a26bc9975e45a1935b082f5dab4, type: 2}
+    - {fileID: 11400000, guid: 74fc2524a7a8a274daa5b15bc8aa27fb, type: 2}
+    rewards:
+    - Resource: 2
+      Amount: 12
+  - _clueText: I want more!
+    completionDialogue:
+    - ..
+    completionConditions:
+    - {fileID: 11400000, guid: 007d1a26bc9975e45a1935b082f5dab4, type: 2}
+    - {fileID: 11400000, guid: 9967f658454c2384793daded0be8455d, type: 2}
+    - {fileID: 11400000, guid: ca4806214d72e3341ae7ad716105a4c5, type: 2}
+    - {fileID: 11400000, guid: f4cca0df459bba045a86934dad32384f, type: 2}
+    - {fileID: 11400000, guid: e010202515beb894389f9da3aa238459, type: 2}
+    - {fileID: 11400000, guid: b880f2a18397b9547a7f4124f5da06f7, type: 2}
+    - {fileID: 11400000, guid: 74fc2524a7a8a274daa5b15bc8aa27fb, type: 2}
+    rewards:
+    - Resource: 2
+      Amount: 20
+  _initialConversation: []

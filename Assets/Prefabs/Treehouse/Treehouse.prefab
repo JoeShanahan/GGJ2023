@@ -1914,7 +1914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d510d3ee33757b419d906e2a380ae07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _furnitureData: {fileID: 11400000, guid: 9967f658454c2384793daded0be8455d, type: 2}
+  _furnitureData: {fileID: 11400000, guid: f4cca0df459bba045a86934dad32384f, type: 2}
 --- !u!1 &3978963743158859278
 GameObject:
   m_ObjectHideFlags: 0
@@ -4041,7 +4041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d510d3ee33757b419d906e2a380ae07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _furnitureData: {fileID: 11400000, guid: 9967f658454c2384793daded0be8455d, type: 2}
+  _furnitureData: {fileID: 11400000, guid: f4cca0df459bba045a86934dad32384f, type: 2}
 --- !u!1 &8472751503152429977
 GameObject:
   m_ObjectHideFlags: 0
@@ -4985,6 +4985,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8565086461417805543, guid: 112aa3e5993e1df4ea61ac13d4278676,
         type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 65bd2c03bef6ef24e9596292bace1d8e,
+        type: 2}
+    - target: {fileID: 8565086461417805543, guid: 112aa3e5993e1df4ea61ac13d4278676,
+        type: 3}
       propertyPath: room
       value: 
       objectReference: {fileID: 1350514298003881948}
@@ -5303,6 +5309,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Resident2
       objectReference: {fileID: 0}
+    - target: {fileID: 8565086461417805543, guid: 112aa3e5993e1df4ea61ac13d4278676,
+        type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 90c15fbe481a4ba46967038a2ff8b034,
+        type: 2}
     - target: {fileID: 8565086461417805543, guid: 112aa3e5993e1df4ea61ac13d4278676,
         type: 3}
       propertyPath: room
