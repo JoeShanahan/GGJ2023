@@ -8195,6 +8195,11 @@ PrefabInstance:
       propertyPath: _treehouseManager
       value: 
       objectReference: {fileID: 1035578866}
+    - target: {fileID: 5158648969984143951, guid: 8dd855a0427e6594b8313f5bd2f9210a,
+        type: 3}
+      propertyPath: waterSystemUIRoot
+      value: 
+      objectReference: {fileID: 1757458182}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dd855a0427e6594b8313f5bd2f9210a, type: 3}
 --- !u!1001 &5128268897199161579
