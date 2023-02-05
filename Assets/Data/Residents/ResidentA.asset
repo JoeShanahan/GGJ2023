@@ -35,7 +35,7 @@ MonoBehaviour:
     completionDialogue:
     - I'm no longer alone. Yay!
     completionConditions:
-    - {fileID: 11400000, guid: 7ba198053f8aadf43818282ad41f10f3, type: 2}
+    - {fileID: 11400000, guid: b5192aafb2e733b4c9ff3ce2bbd9e7b0, type: 2}
     rewards:
     - Resource: 2
       Amount: 4
