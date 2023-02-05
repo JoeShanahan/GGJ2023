@@ -26,14 +26,25 @@ public class Quest
         _reusableTempList.Clear();
         _reusableTempList.AddRange(completionConditions);
 
-        foreach (var furniture in roomFurniture)
+        foreach (var furniture in completionConditions)
         {
-            if (furniture.IsPurchased)
+            bool found = false;
+            foreach (var roomF in roomFurniture)
             {
-                if (_reusableTempList.Remove(furniture.FurnitureData) == false)
+                if (roomF.IsPurchased == false)
                 {
-                    return false;
+                    continue;
                 }
+
+                if (roomF.FurnitureData == furniture)
+                {
+                    found = true;
+                }
+            }
+
+            if (found == false)
+            {
+                return false;
             }
         }
 
