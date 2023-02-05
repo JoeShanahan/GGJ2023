@@ -31,6 +31,18 @@ public class TreehouseManager : MonoBehaviour
 
     [SerializeField]
     private CanvasGroup _resourceCanvas;
+    
+    public float ResourceUIAlpha
+    {
+        get => _resourceUIAlpha;
+        set => _resourceUIAlpha = value;
+    }
+
+    public Material TreeMaterial
+    {
+        get => _treeMaterial;
+        set => _treeMaterial = value;
+    }
 
     [Button]
     public void IncreaseTreeHeight()
@@ -61,8 +73,8 @@ public class TreehouseManager : MonoBehaviour
     IEnumerator TweenFloor(int floorIdx)
     {
         DOTween.To(
-            ()=> _treeMaterial.GetFloat("_ReplaceSlider"), 
-            x=> _treeMaterial.SetFloat("_ReplaceSlider", x), 
+            ()=> TreeMaterial.GetFloat("_ReplaceSlider"), 
+            x=> TreeMaterial.SetFloat("_ReplaceSlider", x), 
             1, 0.5f);
 
         DOTween.To(
@@ -96,8 +108,8 @@ public class TreehouseManager : MonoBehaviour
         yield return new WaitForSeconds(_treeGrowthSpeed + 0.2f);
 
         DOTween.To(
-            ()=> _treeMaterial.GetFloat("_ReplaceSlider"), 
-            x=> _treeMaterial.SetFloat("_ReplaceSlider", x), 
+            ()=> TreeMaterial.GetFloat("_ReplaceSlider"), 
+            x=> TreeMaterial.SetFloat("_ReplaceSlider", x), 
             0, 0.5f);
 
         DOTween.To(
@@ -114,7 +126,7 @@ public class TreehouseManager : MonoBehaviour
         // {
         //     graphic.gameObject.SetActive(false);
         // }
-        _treeMaterial.SetFloat("_ReplaceSlider", 0);
+        TreeMaterial.SetFloat("_ReplaceSlider", 0);
         _treeTop.transform.localScale = new Vector3(0, 0, 0);
 
         

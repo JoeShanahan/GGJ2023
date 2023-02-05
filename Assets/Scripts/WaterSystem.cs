@@ -9,13 +9,11 @@ public class WaterSystem : MonoBehaviour
     private bool _shownWaterUITutorial;
     
     private const float SECOND = 1.0f;
-
+    
+    private float _fillSpeedPerSecond = 1f;
+    
     [SerializeField]
     private TreehouseManager _treehouseManager;
-
-    // The rate of the water drips per second
-    [SerializeField]
-    private float _fillSpeedPerSecond = 1f;
 
     [SerializeField]
     private WaterLevels _waterLevels;
@@ -30,6 +28,12 @@ public class WaterSystem : MonoBehaviour
 
     [SerializeField]
     private RectTransform waterSystemUIRoot;
+
+    public float FillSpeedPerSecond
+    {
+        set => _fillSpeedPerSecond = value;
+    }
+
 
     void Start()
     {

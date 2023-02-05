@@ -2025,11 +2025,6 @@ PrefabInstance:
       propertyPath: room
       value: 
       objectReference: {fileID: 423241249}
-    - target: {fileID: 3227843578819743244, guid: 5797f933a30d30e4e97a84173c318935,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3240902660729876471, guid: 5797f933a30d30e4e97a84173c318935,
         type: 3}
       propertyPath: m_RootOrder
@@ -2039,6 +2034,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5097337961937261760, guid: 5797f933a30d30e4e97a84173c318935,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6404892779077916696, guid: 5797f933a30d30e4e97a84173c318935,
         type: 3}
@@ -2054,6 +2054,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: WorkerAllocationSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666012802238668994, guid: 5797f933a30d30e4e97a84173c318935,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1035578868}
+    - target: {fileID: 7666012802238668994, guid: 5797f933a30d30e4e97a84173c318935,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TryGrowRoots
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666012802238668994, guid: 5797f933a30d30e4e97a84173c318935,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TreehouseRootsSystem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9030692390946593208, guid: 5797f933a30d30e4e97a84173c318935,
         type: 3}
@@ -4069,6 +4084,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67818f4a754a9954697f444ca4a3d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1035578868 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1070016892428668168, guid: 5797f933a30d30e4e97a84173c318935,
+    type: 3}
+  m_PrefabInstance: {fileID: 423241248}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcd7f3feaf6351c438ff5266179b8d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1050906416
 GameObject:
   m_ObjectHideFlags: 0
@@ -4718,7 +4745,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196784427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.5, y: 1, z: 0}
+  m_LocalPosition: {x: -9.692, y: 1, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5639,7 +5666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563710084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5, y: 1, z: 0}
+  m_LocalPosition: {x: -7.411, y: 1, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
