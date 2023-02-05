@@ -154,6 +154,12 @@ Transform:
   m_Father: {fileID: 2101478853}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &62290038 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 832666905973664143, guid: 5797f933a30d30e4e97a84173c318935,
+    type: 3}
+  m_PrefabInstance: {fileID: 423241248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &95423633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1730,7 +1736,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -2161,6 +2166,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &440950828 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 832666906222448950, guid: 5797f933a30d30e4e97a84173c318935,
+    type: 3}
+  m_PrefabInstance: {fileID: 423241248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &458372276
 GameObject:
   m_ObjectHideFlags: 0
@@ -4179,7 +4190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093643809}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.93, y: 7.806, z: 0}
+  m_LocalPosition: {x: -6.65, y: 7.806, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5385,6 +5396,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461912448}
   m_CullTransparentMesh: 1
+--- !u!1 &1465773977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1465773978}
+  m_Layer: 0
+  m_Name: BuildMenuFocus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1465773978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465773977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.12, y: 1.87, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 440950828}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1529606854
 GameObject:
   m_ObjectHideFlags: 0
@@ -7059,14 +7101,33 @@ MonoBehaviour:
     focusTransform: {fileID: 1452900467}
     peepholePercent: 94
     textOffset: {x: 0, y: -240}
-    text: Water the treeeeee
+    text: press to water
   - tutorialID: 2
     focusTransform: {fileID: 1093643810}
     peepholePercent: 96
     textOffset: {x: 300, y: -200}
     text: 'once the roots have enough water
 
-      you can grow the tree'
+      you can grow the tree taller'
+  - tutorialID: 3
+    focusTransform: {fileID: 1563710085}
+    peepholePercent: 90
+    textOffset: {x: 300, y: 0}
+    text: assign mice to collect resources
+  - tutorialID: 4
+    focusTransform: {fileID: 62290038}
+    peepholePercent: 90
+    textOffset: {x: 0, y: -200}
+    text: 'an animal has moved in!
+
+      looks like they want to talk'
+  - tutorialID: 5
+    focusTransform: {fileID: 1465773978}
+    peepholePercent: 93
+    textOffset: {x: -100, y: -270}
+    text: 'perhaps you can build them
+
+      something to make them happier'
 --- !u!1 &1864057367
 GameObject:
   m_ObjectHideFlags: 0

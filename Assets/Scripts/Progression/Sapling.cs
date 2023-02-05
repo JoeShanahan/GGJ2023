@@ -28,6 +28,18 @@ public class Sapling : MonoBehaviour
     private void Start()
     {
         CameraManager.Instance.Set(cameraStartPosition, cameraStartOrthographicSize);
+        ProgressionManager.Subscribe(ProgressDone);
+    }
+
+    private void ProgressDone()
+    {
+        if (ProgressionManager.HasDone(ProgressStep.DismissedTitle))
+        StartCoroutine(IntroRoutine());
+    }
+
+    private IEnumerator IntroRoutine()
+    {
+        yield return new WaitForSeconds(2);
         FindObjectOfType<TutorialManager>().EnableTutorial(TutorialManager.TutorialID.WaterTheTree);
     }
 
