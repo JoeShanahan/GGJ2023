@@ -85,7 +85,6 @@ public class TreehouseResident : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("IN ROUTINE");
             var idleDuration = Random.Range(_idleMinDuration, _idleMaxDuration);
             yield return new WaitForSeconds(idleDuration);
 
