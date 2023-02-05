@@ -46,9 +46,17 @@ public class TreehouseManager : MonoBehaviour
 
         TweenFloor(_rooms[_currentHeight - 1].gameObject);
 
-        if (_currentHeight == 2)
+        switch (_currentHeight)
         {
-            ProgressionManager.CompleteStep(ProgressStep.GrownTree);
+            case 2:
+                ProgressionManager.CompleteStep(ProgressStep.GrownTree);
+                break;
+            case 3:
+                ProgressionManager.CompleteStep(ProgressStep.GrownTree2);
+                break;
+            case 4:
+                ProgressionManager.CompleteStep(ProgressStep.GrownTree3);
+                break;
         }
 
     }

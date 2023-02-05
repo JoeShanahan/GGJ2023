@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using EasyButtons;
 using UnityEngine;
 
-public enum ProgressStep { Unknown, WateredTree, CollectedTwigs, GrownTree, UnlockedRoots, UnlockedUpgrades }
+public enum ProgressStep { Unknown, WateredTree, CollectedTwigs, GrownTree, UnlockedRoots, UnlockedUpgrades, GrownTree2, GrownTree3 }
 
 [DefaultExecutionOrder(-1000)]
 public class ProgressionManager : MonoBehaviour
@@ -14,6 +14,8 @@ public class ProgressionManager : MonoBehaviour
     [SerializeField] private bool _hasWateredTree;
     [SerializeField] private bool _hasCollectedTwigs;
     [SerializeField] private bool _hasGrownTree;
+    [SerializeField] private bool _hasGrownTree2;
+    [SerializeField] private bool _hasGrownTree3;
     [SerializeField] private bool _hasUnlockedRoots;
     [SerializeField] private bool _hasUnlockedUpgrades;
     
@@ -32,6 +34,10 @@ public class ProgressionManager : MonoBehaviour
                 return _instance._hasCollectedTwigs;
             case (ProgressStep.GrownTree):
                 return _instance._hasGrownTree;
+            case (ProgressStep.GrownTree2):
+                return _instance._hasGrownTree2;
+            case (ProgressStep.GrownTree3):
+                return _instance._hasGrownTree3;
             case (ProgressStep.UnlockedRoots):
                 return _instance._hasUnlockedRoots;
             case (ProgressStep.UnlockedUpgrades):
@@ -57,6 +63,12 @@ public class ProgressionManager : MonoBehaviour
             case (ProgressStep.GrownTree):
                 _instance._hasGrownTree = true;
                 break;
+            case (ProgressStep.GrownTree2):
+                _instance._hasGrownTree2 = true;
+                break;
+            case (ProgressStep.GrownTree3):
+                _instance._hasGrownTree3 = true;
+                break;
             case (ProgressStep.UnlockedRoots):
                 _instance._hasUnlockedRoots = true;
                 break;
@@ -73,6 +85,11 @@ public class ProgressionManager : MonoBehaviour
     public static void Subscribe(System.Action act)
     {
         _onStepComplete += act;
+    }
+    
+    public static void Unsubscribe(System.Action act)
+    {
+        _onStepComplete -= act;
     }
 
     [Button]
