@@ -15,7 +15,7 @@ public class ResidentInteractionSystem : MonoBehaviour
     private TreehouseRoom _activeInteractionRoom;
 
     [SerializeField]
-    private GameObject residentQuestPanel;
+    private ResidentQuestPanel residentQuestPanel;
 
     public bool IsInActiveInteraction => _activeInteractionRoom != null;
     
@@ -51,7 +51,7 @@ public class ResidentInteractionSystem : MonoBehaviour
     {
         Assert.IsNotNull(_activeInteractionRoom);
         _activeInteractionRoom = null;
-        residentQuestPanel.SetActive(false);
+        residentQuestPanel.MakeVisible(false);
         CameraManager.Instance.ZoomOut();
     }
 
@@ -64,6 +64,7 @@ public class ResidentInteractionSystem : MonoBehaviour
             yield return new WaitForSeconds(duration + 0.5f);
         }
         _interactionCoroutine = null;
-        residentQuestPanel.SetActive(true);
+        residentQuestPanel.SetResident(resident.Data);
+        residentQuestPanel.MakeVisible(true);
     }
 }

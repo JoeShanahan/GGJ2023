@@ -17,6 +17,8 @@ public class TreehouseResident : MonoBehaviour
     [SerializeField]
     private ResidentData data;
 
+    public ResidentData Data => data;
+
     private List<ActiveQuestEntry> _activeQuests = new List<ActiveQuestEntry>();
     
     [SerializeField]
