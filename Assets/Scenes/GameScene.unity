@@ -1515,7 +1515,7 @@ MonoBehaviour:
   zoomDuration: 0.5
   zoomInProjectionSize: 1.9
   camera: {fileID: 330585545}
-  zoomInOffset: {x: 0, y: 1.5, z: 0}
+  zoomInOffset: {x: 0.99, y: 0.31, z: 0}
 --- !u!1 &367141202
 GameObject:
   m_ObjectHideFlags: 0
