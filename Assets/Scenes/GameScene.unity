@@ -1947,6 +1947,16 @@ PrefabInstance:
       propertyPath: rootUpgradeCosts.Array.data[1]
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1070016892428668168, guid: 5797f933a30d30e4e97a84173c318935,
+        type: 3}
+      propertyPath: rootStageWaterFillPerSeconds.Array.data[1]
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070016892428668168, guid: 5797f933a30d30e4e97a84173c318935,
+        type: 3}
+      propertyPath: rootStageWaterFillPerSeconds.Array.data[2]
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 1350514298003881922, guid: 5797f933a30d30e4e97a84173c318935,
         type: 3}
       propertyPath: m_IsActive

@@ -17,7 +17,7 @@ MonoBehaviour:
   _quests:
   - _clueText: My walls feel a bit empty.
     completionDialogue:
-    - Thank you! It's beatiful.
+    - Thank you! It's beautiful.
     completionConditions:
     - {fileID: 11400000, guid: ca4806214d72e3341ae7ad716105a4c5, type: 2}
     rewards:
