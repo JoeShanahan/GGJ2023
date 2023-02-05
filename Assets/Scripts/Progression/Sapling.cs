@@ -55,6 +55,7 @@ public class Sapling : MonoBehaviour
         treehouseManager.IncreaseTreeHeight();
         workerAllocationSystem.IncreaseWorkerCount();
         workerAllocationSystem.IncreaseWorkerCount();
+        workerAllocationSystem.IncreaseWorkerCount();
         
         CameraManager.Instance.Zoom(camerafirstZoomOutPosition,  cameraFirstZoomOutOrthographicSize);
     }

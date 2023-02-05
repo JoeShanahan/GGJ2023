@@ -30,6 +30,7 @@ public class WaterSystem : MonoBehaviour
     void Start()
     {
         ProgressionManager.Subscribe(OnProgression);
+        _fillCircle.fillAmount = 0f;
     }
 
     void OnProgression()

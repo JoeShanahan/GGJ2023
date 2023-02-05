@@ -6569,7 +6569,7 @@ GameObject:
   - component: {fileID: 2094302157}
   - component: {fileID: 2094302158}
   m_Layer: 0
-  m_Name: Collect10Sticks
+  m_Name: Collect5Sticks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6603,7 +6603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: 1
-  amount: 10
+  amount: 5
   step: 2
 --- !u!1 &2101478852
 GameObject:
