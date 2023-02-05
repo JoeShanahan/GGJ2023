@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cbf5da2a71f3643afec2f22b4e8d8f, type: 3}
   m_Name: Fridge_0
   m_EditorClassIdentifier: 
+  DisplayName: Fridge
   IconSprite: {fileID: 21300000, guid: 1966063e22dc77c4db0bd970bba6d212, type: 3}
-  FurnitureObject: {fileID: 8665199529063760530, guid: 8b2204ce790003845a4d332830f13757,
-    type: 3}
   Cost:
   - Resource: 3
-    Amount: 12
+    Amount: 3
   - Resource: 0
-    Amount: 15
+    Amount: 8

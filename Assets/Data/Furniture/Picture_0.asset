@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69cbf5da2a71f3643afec2f22b4e8d8f, type: 3}
   m_Name: Picture_0
   m_EditorClassIdentifier: 
+  DisplayName: Vibrant Painting
   IconSprite: {fileID: 21300000, guid: 7c107fb6b642c484499afe43b7d88adb, type: 3}
-  FurnitureObject: {fileID: 8665199529063760530, guid: 31a00df2e5472564980b72b74b219f6e,
-    type: 3}
   Cost:
-  - Resource: 3
-    Amount: 12
+  - Resource: 1
+    Amount: 4
   - Resource: 0
-    Amount: 15
+    Amount: 2

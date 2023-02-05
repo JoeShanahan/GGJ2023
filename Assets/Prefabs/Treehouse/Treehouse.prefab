@@ -1914,7 +1914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d510d3ee33757b419d906e2a380ae07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _furnitureData: {fileID: 11400000, guid: 9967f658454c2384793daded0be8455d, type: 2}
+  _furnitureData: {fileID: 11400000, guid: f4cca0df459bba045a86934dad32384f, type: 2}
 --- !u!1 &3978963743158859278
 GameObject:
   m_ObjectHideFlags: 0
@@ -4041,7 +4041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d510d3ee33757b419d906e2a380ae07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _furnitureData: {fileID: 11400000, guid: 9967f658454c2384793daded0be8455d, type: 2}
+  _furnitureData: {fileID: 11400000, guid: f4cca0df459bba045a86934dad32384f, type: 2}
 --- !u!1 &8472751503152429977
 GameObject:
   m_ObjectHideFlags: 0
@@ -4885,6 +4885,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8565086461630918236, guid: 112aa3e5993e1df4ea61ac13d4278676,
+        type: 3}
+      propertyPath: _allFurniture.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8565086461630918237, guid: 112aa3e5993e1df4ea61ac13d4278676,
         type: 3}

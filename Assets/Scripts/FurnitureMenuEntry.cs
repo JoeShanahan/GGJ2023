@@ -24,6 +24,9 @@ public class FurnitureMenuEntry : MonoBehaviour
     
     [SerializeField]
     private Image furnitureIcon;
+
+    [SerializeField]
+    private TMP_Text _nameText;
     
     [SerializeField]
     private List<CostEntry> costEntries;
@@ -38,6 +41,7 @@ public class FurnitureMenuEntry : MonoBehaviour
 
     public void Initialize(FurnitureMenu furnitureMenu, Furniture furniture, int index)
     {
+        _nameText.text = furniture.DisplayName;
         _index = index;
         _furnitureMenu = furnitureMenu;
         _furniture = furniture;

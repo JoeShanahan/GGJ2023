@@ -12,6 +12,7 @@ public class Furniture : ScriptableObject
         public int Amount;
     }
     
+    public string DisplayName;
     public Sprite IconSprite;
     public List<FurnitureCost> Cost;
 }
