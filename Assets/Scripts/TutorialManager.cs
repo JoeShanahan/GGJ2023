@@ -7,7 +7,7 @@ using WorldToCanvas;
 
 public class TutorialManager : MonoBehaviour
 {
-    public enum TutorialID { Unknown, WaterTheTree, WaterMeter };
+    public enum TutorialID { Unknown, WaterTheTree, WaterMeter, ClickResourceToCollect, ClickResident, DoQuests };
 
     [SerializeField]
     private float _zoomTime;

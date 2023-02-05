@@ -79,7 +79,7 @@ public class Worker : MonoBehaviour
     {
         while (true)
         {
-            var idleDuration = Random.Range(0f, 3f);
+            var idleDuration = Random.Range(0f, 1f);
             yield return new WaitForSeconds(idleDuration);
             
             // walk to resource
