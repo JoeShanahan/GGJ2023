@@ -64,10 +64,12 @@ public class TreehouseResident : MonoBehaviour
         foreach (var quest in data.Quests)
         {
             _activeQuests.Add(new ActiveQuestEntry() { Quest = quest });
-        }        
-
-        // QueuedConversations.Enqueue("this is a test conversation");
-        // QueuedConversations.Enqueue("I can say multiple things!");
+        }      
+        
+        foreach (var message in data.InitialConversation)
+        {
+            QueuedConversations.Enqueue(message);
+        }
     }
 
     private void OnEnable()
