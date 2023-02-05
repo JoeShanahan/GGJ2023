@@ -97,7 +97,7 @@ public class TreehouseManager : MonoBehaviour
             _treeTop.transform.DOScale(new Vector3(1, 1, 1), _treeGrowthSpeed);
             _treeTop.transform.DOLocalMoveY(currentRoom.transform.localPosition.y + TREE_HEIGHT_DIFF -1.5f, _treeGrowthSpeed);
 
-            currentRoom.transform.localPosition = new Vector3(endPos.x, endPos.y - TREE_HEIGHT_DIFF, endPos.z+2);
+            currentRoom.transform.localPosition = new Vector3(endPos.x, endPos.y - TREE_HEIGHT_DIFF, endPos.z+5);
             currentRoom.transform.DOLocalMove(endPos, _treeGrowthSpeed);
         }
         else

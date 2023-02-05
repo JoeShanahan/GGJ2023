@@ -24,11 +24,22 @@ public class Worker : MonoBehaviour
     [SerializeField]
     private float _jumpsPerSecond = 2;
 
+    [SerializeField]
+    private SpriteRenderer _spriteRenderer;
+
+    [SerializeField]
+    private Sprite[] _workerSprites;
+
     public Resource ResourceType => _resourceType;
+
+    public void Start()
+    {
+        _spriteRenderer.sprite = _workerSprites[Random.Range(0, _workerSprites.Length)];
+    }
 
     public void Initialize(Transform resourceGatherPoint, Transform resourceDropOfPoint, Resource resourceType)
     {
-        SwitchResourceGatherRoutine(resourceGatherPoint, resourceDropOfPoint, resourceType);
+        SwitchResourceGatherRoutine(resourceGatherPoint, resourceDropOfPoint, resourceType);       
     }
 
     public void SetUnallocated(Vector3 position)
