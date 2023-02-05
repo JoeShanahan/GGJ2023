@@ -32,10 +32,14 @@ public class Worker : MonoBehaviour
 
     public Resource ResourceType => _resourceType;
 
+    public void Start()
+    {
+        _spriteRenderer.sprite = _workerSprites[Random.Range(0, _workerSprites.Length)];
+    }
+
     public void Initialize(Transform resourceGatherPoint, Transform resourceDropOfPoint, Resource resourceType)
     {
-        SwitchResourceGatherRoutine(resourceGatherPoint, resourceDropOfPoint, resourceType);
-        _spriteRenderer.sprite = _workerSprites[Random.Range(0, _workerSprites.Length)];
+        SwitchResourceGatherRoutine(resourceGatherPoint, resourceDropOfPoint, resourceType);       
     }
 
     public void SetUnallocated(Vector3 position)
