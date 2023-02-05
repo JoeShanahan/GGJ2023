@@ -202,6 +202,11 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 89851ec2dc109654a9007fc7b1dd81df, type: 2}
   _renderer: {fileID: 3375439977275630860}
   _questCompleteMarker: {fileID: 2650575850357764070}
+  _idleMaxDuration: 10
+  _idleMinDuration: 2
+  _walkSpeed: 1
+  _jumpPower: 0.1
+  _jumpsPerSecond: 2
 --- !u!58 &5461042079262501333
 CircleCollider2D:
   m_ObjectHideFlags: 0
