@@ -9,39 +9,56 @@ public class FurnitureMenu : MonoBehaviour
     public static FurnitureMenu Instance;
     
     private OpenFurnitureMenuContext _context;
-    
+
+    private List<GameObject> _menuEntries = new List<GameObject>();
+
     [SerializeField]
     private GameObject _visuals;
     
-    [SerializeField]
-    private List<Furniture> furnitures;
-
     [SerializeField]
     private FurnitureMenuEntry entryPrefab;
 
     [SerializeField]
     private Transform content;
 
-    public void OpenMenu(ConstructionPoint point)
+    public void OpenMenu(TreehouseRoom room)
     {
-        if (ResidentInteractionSystem.Instance.IsInActiveInteraction)
+        foreach (var entry in _menuEntries)
         {
-            return;
+            Destroy(entry);
         }
+        _menuEntries.Clear();
+        
+        for (var i = 0; i < room.AllFurniture.Count; i++)
+        {
+            var furniture = room.AllFurniture[i];
+            if (furniture.IsPurchased)
+            {
+                continue;
+            }
+            var item = Instantiate(entryPrefab, content);
+            item.Initialize(this, furniture.FurnitureData, i);
+            _menuEntries.Add(item.gameObject);
+        }
+
+        // if (ResidentInteractionSystem.Instance.IsInActiveInteraction)
+        // {
+        //     return;
+        // }
         Assert.AreEqual(_context, default);
         _context = new OpenFurnitureMenuContext()
         {
-            ConstructionPoint = point,
+            Room = room,
         };
         _visuals.SetActive(true);
     }
 
-    public void OnFurnitureSelected(Furniture furniture)
+    public void OnFurnitureSelected(Furniture furniture, int index)
     {
         if (ResourceSystem.Instance.TryDecreaseResources(furniture.Cost))
         {
             _visuals.SetActive(false);
-            _context.ConstructionPoint.BuildFurniture(furniture);
+            _context.Room.BuildFurniture(index);
             _context = default;
         }
     }
@@ -61,16 +78,10 @@ public class FurnitureMenu : MonoBehaviour
     {
         Assert.IsNull(Instance);
         Instance = this;
-        
-        foreach (var furniture in furnitures)
-        {
-            var item = Instantiate(entryPrefab, content);
-            item.Initialize(this, furniture);
-        }
     }
 }
 
 public struct OpenFurnitureMenuContext
 {
-    public ConstructionPoint ConstructionPoint;
+    public TreehouseRoom Room;
 }

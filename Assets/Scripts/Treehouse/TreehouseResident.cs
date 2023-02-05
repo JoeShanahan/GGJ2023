@@ -34,6 +34,8 @@ public class TreehouseResident : MonoBehaviour
     private GameObject _questCompleteMarker;
 
     public Queue<string> QueuedConversations = new Queue<string>();
+    
+    public TreehouseRoom Room { get; set; }
 
     public IReadOnlyList<ActiveQuestEntry> ActiveQuestEntries => _activeQuests;
 
@@ -58,7 +60,7 @@ public class TreehouseResident : MonoBehaviour
         ResidentInteractionSystem.Instance.BeginInteractWithResident(room);
     }
 
-    public void CheckQuestsComplete(Furniture[] roomFurniture)
+    public void CheckQuestsComplete(PlacedFurniture[] roomFurniture)
     {
         for (var i = 0; i < _activeQuests.Count; i++)
         {

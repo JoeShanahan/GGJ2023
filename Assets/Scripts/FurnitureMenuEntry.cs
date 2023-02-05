@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class FurnitureMenuEntry : MonoBehaviour
 {
+    private int _index;
+    
     [Serializable]
     private struct CostEntry
     {
@@ -31,11 +33,12 @@ public class FurnitureMenuEntry : MonoBehaviour
     
     public void OnFurnitureSelected()
     {
-        _furnitureMenu.OnFurnitureSelected(_furniture);
+        _furnitureMenu.OnFurnitureSelected(_furniture, _index);
     }
 
-    public void Initialize(FurnitureMenu furnitureMenu, Furniture furniture)
+    public void Initialize(FurnitureMenu furnitureMenu, Furniture furniture, int index)
     {
+        _index = index;
         _furnitureMenu = furnitureMenu;
         _furniture = furniture;
         furnitureIcon.sprite = furniture.IconSprite;

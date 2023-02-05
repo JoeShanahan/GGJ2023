@@ -20,19 +20,17 @@ public class Quest
     private List<Furniture.FurnitureCost> rewards;
 
     public string ClueText => _clueText;
-
-    // roomFurniture is an array that can contain null entries for the construction points where nothing has been built.
-    // completionConditions can contain duplicates if the goal is to need 2 of x to complete the quest. That's why the temp list is needed for checking.
-    public bool CheckComplete(Furniture[] roomFurniture)
+    
+    public bool CheckComplete(PlacedFurniture[] roomFurniture)
     {
         _reusableTempList.Clear();
         _reusableTempList.AddRange(completionConditions);
 
         foreach (var furniture in roomFurniture)
         {
-            if (furniture != null)
+            if (furniture.IsPurchased)
             {
-                if (_reusableTempList.Remove(furniture) == false)
+                if (_reusableTempList.Remove(furniture.FurnitureData) == false)
                 {
                     return false;
                 }
