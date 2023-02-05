@@ -21,9 +21,6 @@ public class Quest
 
     public string ClueText => _clueText;
 
-    public bool IsComplete => UnityEngine.Random.value > 0.5f; // TODO not this
-
-
     // roomFurniture is an array that can contain null entries for the construction points where nothing has been built.
     // completionConditions can contain duplicates if the goal is to need 2 of x to complete the quest. That's why the temp list is needed for checking.
     public bool CheckComplete(Furniture[] roomFurniture)
