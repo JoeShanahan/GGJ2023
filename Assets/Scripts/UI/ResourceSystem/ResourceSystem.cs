@@ -87,4 +87,13 @@ public class ResourceSystem : MonoBehaviour
     {
         Instance = null;
     }
+
+    [Button]
+    public void CheatResources()
+    {
+        for (int i = 0; i < _resources.Length; i++)
+        {
+            _resources[i] = 500;
+        }
+    }
 }

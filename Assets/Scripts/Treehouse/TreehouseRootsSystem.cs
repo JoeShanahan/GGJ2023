@@ -73,13 +73,12 @@ public class TreehouseRootsSystem : MonoBehaviour
         {
             yield break;
         }
-        
-        waterSystem.FillSpeedPerSecond = rootStageWaterFillPerSeconds[_rootStage];
 
         var treehouseManager = FindObjectOfType<TreehouseManager>();
   
         _rootStage++;
-
+        waterSystem.FillSpeedPerSecond = rootStageWaterFillPerSeconds[_rootStage];
+        
         DOTween.To(
             ()=> treehouseManager.TreeMaterial.GetFloat("_ReplaceSlider"), 
             x=> treehouseManager.TreeMaterial.SetFloat("_ReplaceSlider", x), 
