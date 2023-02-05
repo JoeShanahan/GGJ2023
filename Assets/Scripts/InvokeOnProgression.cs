@@ -27,6 +27,8 @@ public class InvokeOnProgression : MonoBehaviour
         if (ProgressionManager.HasDone(step))
         {
             unityEvent.Invoke();
+            ProgressionManager.Unsubscribe(OnProgressionStepComplete);
+            Destroy(this);
         }
     }
 }

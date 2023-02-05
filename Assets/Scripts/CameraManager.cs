@@ -32,6 +32,16 @@ public class CameraManager : MonoBehaviour
         transform.DOMove(_cameraZoomOutPosition, zoomDuration);
     }
 
+    public void UpdateZoomOut(Transform transform) // hacky workaround to pass in a vector3
+    {
+        _cameraZoomOutPosition = transform.localPosition;
+    }
+    
+    public void UpdateZoomOut(float orthographicSize)
+    {
+        _cameraZoomOutProjectionSize = orthographicSize;
+    }
+
     [Button]
     public void ZoomIn(TreehouseRoom room)
     {

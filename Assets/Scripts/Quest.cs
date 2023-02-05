@@ -11,6 +11,9 @@ public class Quest
     private static List<Furniture> _reusableTempList = new List<Furniture>();
 
     [SerializeField]
+    private string[] completionDialogue;
+    
+    [SerializeField]
     private List<Furniture> completionConditions;
 
     [SerializeField]
@@ -40,6 +43,14 @@ public class Quest
         }
 
         return true;
+    }
+
+    public void QueueCompletedDialogue(TreehouseResident resident)
+    {
+        foreach (var dialogue in completionDialogue)
+        {
+            resident.QueuedConversations.Enqueue(dialogue);
+        }
     }
 
     public void ObtainRewards()

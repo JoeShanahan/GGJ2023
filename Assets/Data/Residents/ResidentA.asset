@@ -28,6 +28,10 @@ MonoBehaviour:
     - Resource: 2
       Amount: 5
   - _clueText: I haven't been sleeping well
+  - completionDialogue:
+    - 'Ahh, this bed is just what I needed! '
+    - Thank you so much, I can finally get some well-deserved rest.
+
     completionConditions:
     - {fileID: 11400000, guid: 2de9ba4c6d288f149ba78bed4de0210e, type: 2}
     rewards:

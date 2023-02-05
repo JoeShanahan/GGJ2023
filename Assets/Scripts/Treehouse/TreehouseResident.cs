@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using EasyButtons;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TreehouseResident : MonoBehaviour
 {
@@ -43,6 +44,10 @@ public class TreehouseResident : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         ResidentInteractionSystem.Instance.BeginInteractWithResident(room);
     }
 
@@ -56,6 +61,7 @@ public class TreehouseResident : MonoBehaviour
                 quest.Completed = true;
                 _activeQuests[i] = quest;
                 _questCompleteMarker.SetActive(true);
+                quest.Quest.QueueCompletedDialogue(this);
             }
         }
     }

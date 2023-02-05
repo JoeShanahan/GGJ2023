@@ -5,6 +5,8 @@ using System.Collections;
 
 public class WaterSystem : MonoBehaviour
 {
+    private bool _shownWaterUITutorial;
+    
     private const float SECOND = 1.0f;
 
     [SerializeField]
@@ -28,12 +30,19 @@ public class WaterSystem : MonoBehaviour
     void Start()
     {
         ProgressionManager.Subscribe(OnProgression);
+        _fillCircle.fillAmount = 0f;
     }
 
     void OnProgression()
     {
-        if (ProgressionManager.HasDone(ProgressStep.UnlockedWater))
+        if (ProgressionManager.HasDone(ProgressStep.CollectedTwigs))
         {
+            if (_shownWaterUITutorial)
+            {
+                return;
+            }
+
+            _shownWaterUITutorial = true;
             StartCoroutine(ShowWaterUI());
         }
     }
@@ -42,13 +51,20 @@ public class WaterSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
-        FindObjectOfType<TutorialManager>().EnableTutorial(TutorialManager.TutorialID.WaterMeter);
+        var m = FindObjectOfType<TutorialManager>();
+        m.EnableTutorial(TutorialManager.TutorialID.WaterMeter);
+        
+        yield return new WaitForSeconds(4);
+        
+        m.DismissTutorial();
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ProgressionManager.HasDone(ProgressStep.UnlockedWater) == false)
+        if (ProgressionManager.HasDone(ProgressStep.CollectedTwigs) == false)
             return;
 
         float currentMaximum = _waterLevels.WaterMeterAmounts[_treehouseManager.GetCurrentHeight];
