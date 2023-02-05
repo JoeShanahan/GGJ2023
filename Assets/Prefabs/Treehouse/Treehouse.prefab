@@ -2342,6 +2342,7 @@ MonoBehaviour:
   - {fileID: 1350514298003881948}
   _treeTop: {fileID: 3240902661589936367}
   _treeMaterial: {fileID: 2100000, guid: 487c2b1bb5abe5c4698e1fa68008c18d, type: 2}
+  _resourceCanvas: {fileID: 7926618621108148517}
 --- !u!1 &9030692391269618794
 GameObject:
   m_ObjectHideFlags: 0
