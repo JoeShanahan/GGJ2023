@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using EasyButtons;
 using UnityEngine;
 
-public enum ProgressStep { Unknown, WateredTree, CollectedTwigs, GrownTree, UnlockedRoots, UnlockedUpgrades, GrownTree2, GrownTree3 }
+public enum ProgressStep { Unknown, WateredTree, CollectedTwigs, GrownTree, UnlockedRoots, UnlockedUpgrades, GrownTree2, GrownTree3, DismissedTitle }
 
 [DefaultExecutionOrder(-1000)]
 public class ProgressionManager : MonoBehaviour
@@ -18,6 +18,7 @@ public class ProgressionManager : MonoBehaviour
     [SerializeField] private bool _hasGrownTree3;
     [SerializeField] private bool _hasUnlockedRoots;
     [SerializeField] private bool _hasUnlockedUpgrades;
+    [SerializeField] private bool _hasDismissedTitle;
     
     void Awake() => _instance = this;
 
@@ -42,6 +43,8 @@ public class ProgressionManager : MonoBehaviour
                 return _instance._hasUnlockedRoots;
             case (ProgressStep.UnlockedUpgrades):
                 return _instance._hasUnlockedUpgrades;
+            case (ProgressStep.DismissedTitle):
+                return _instance._hasDismissedTitle;
             default:
                 return false;
         }
@@ -74,6 +77,9 @@ public class ProgressionManager : MonoBehaviour
                 break;
             case (ProgressStep.UnlockedUpgrades):
                 _instance._hasUnlockedUpgrades = true;
+                break;
+            case (ProgressStep.DismissedTitle):
+                _instance._hasDismissedTitle = true;
                 break;
             default:
                 break;
