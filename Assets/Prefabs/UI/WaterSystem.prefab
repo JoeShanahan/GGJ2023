@@ -45,11 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _treehouseManager: {fileID: 0}
-  _waterDripsPerSecond: 1
   _waterLevels: {fileID: 11400000, guid: 2157f8cd4fb313340b999a01feb0f74c, type: 2}
-  _waterMeterAmount: 0
-  _waterMeterFill: 0
-  Second: 0
-  MeterIsFilled: 0
-  _fillCounter: {fileID: 0}
+  _currentFillAmount: 0
   _fillCircle: {fileID: 0}
+  waterSystemUIRoot: {fileID: 0}
