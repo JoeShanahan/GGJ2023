@@ -133,3 +133,7 @@ MonoBehaviour:
   _walkSpeed: 2.5
   _jumpPower: 0.3
   _jumpsPerSecond: 4
+  _spriteRenderer: {fileID: 3919908462753102374}
+  _workerSprites:
+  - {fileID: 21300000, guid: 725fc550404616a4ca3e978783b25894, type: 3}
+  - {fileID: 21300000, guid: 06cbc9652b3e75e4dba729d6ca1c05d8, type: 3}
