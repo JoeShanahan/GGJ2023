@@ -58,10 +58,13 @@ public class CameraManager : MonoBehaviour
         transform.position = position;
     }
     
-    public void Zoom(Vector3 position, float orthographicSize)
+    public void Zoom(Vector3 position, float orthographicSize, float zoomTime=0)
     {
-        DOTween.To((() => camera.orthographicSize), value => camera.orthographicSize = value, orthographicSize, zoomDuration);
-        transform.DOMove(position, zoomDuration);
+        if (zoomTime < 0.1f)
+            zoomTime = zoomDuration;
+
+        DOTween.To((() => camera.orthographicSize), value => camera.orthographicSize = value, orthographicSize, zoomTime);
+        transform.DOMove(position, zoomTime);
     }
 
     private void OnDestroy()
@@ -77,5 +80,8 @@ public class CameraManager : MonoBehaviour
         _cameraZoomOutPosition = transform.position;
         camera = GetComponent<Camera>();
         _cameraZoomOutProjectionSize = camera.orthographicSize;
+
+        camera.transform.position = new Vector3(0, 16, -10);
+        camera.orthographicSize = 4;
     }
 }

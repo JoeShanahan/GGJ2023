@@ -23,6 +23,8 @@ public class TutorialManager : MonoBehaviour
 
     private TutorialText _tutorialText;
 
+    private List<TutorialID> _shownTutorials = new List<TutorialID>();
+
     [System.Serializable]
     public class TutorialEntry
     {
@@ -79,7 +81,25 @@ public class TutorialManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        ProgressionManager.Subscribe(OnProgress);
+    }
+
+    void OnProgress()
+    {
+        if (ProgressionManager.HasDone(ProgressStep.WateredTree) && _shownTutorials.Contains(TutorialID.ClickResourceToCollect) == false)
+        {
+            _shownTutorials.Add(TutorialID.ClickResourceToCollect);
+            StartCoroutine(ShowResourceTut());
+        }
+    }
+
+    IEnumerator ShowResourceTut()
+    {
+        yield return new WaitForSeconds(6);
+        EnableTutorial(TutorialID.ClickResourceToCollect);
+        yield return new WaitForSeconds(5);
+        DismissTutorial();
+
     }
 
     // Update is called once per frame

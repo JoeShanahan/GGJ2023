@@ -25,21 +25,29 @@ public class Sapling : MonoBehaviour
     [SerializeField]
     private float cameraFirstZoomOutOrthographicSize;
 
+    private bool _initialized;
+
     private void Start()
     {
-        CameraManager.Instance.Set(cameraStartPosition, cameraStartOrthographicSize);
         ProgressionManager.Subscribe(ProgressDone);
     }
 
     private void ProgressDone()
     {
+        if (_initialized)
+            return;
+        
         if (ProgressionManager.HasDone(ProgressStep.DismissedTitle))
-        StartCoroutine(IntroRoutine());
+        {
+            CameraManager.Instance.Zoom(cameraStartPosition, cameraStartOrthographicSize, 3);
+            _initialized = true;
+            StartCoroutine(IntroRoutine());
+        }
     }
 
     private IEnumerator IntroRoutine()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(5);
         FindObjectOfType<TutorialManager>().EnableTutorial(TutorialManager.TutorialID.WaterTheTree);
     }
 
