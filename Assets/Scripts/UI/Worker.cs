@@ -109,7 +109,7 @@ public class Worker : MonoBehaviour
             yield return new WaitForSeconds(duration);
             
             //drop of and increase resource
-            ResourceSystem.Instance.IncreaseResource(_resourceType, 1);
+            ResourceSystem.Instance.IncreaseResource(_resourceType, Random.Range(1, 4));
         }
     }
 }
